@@ -19,7 +19,7 @@ If so, **this kit is for you!**
 # What You'll Learn
 ## Build:
 - **Programmable Logic Controllers (“PLC”)**
-- - **PLC Field Wiring**
+- **PLC Field Wiring**
 - **PLC Programming (Ladder Logic)**
 - **Modbus TCP Protocol**
 - **HMI design in Ignition**
