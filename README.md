@@ -18,21 +18,21 @@ If so, **this kit is for you!**
 
 # What You'll Learn
 ## Build:
-- Programmable Logic Controllers (“PLC”)
-- PLC Field Wiring
-- PLC Programming (Ladder Logic)
-- Modbus TCP Protocol
-- HMI design in Ignition
-- Motor Controllers
+**- Programmable Logic Controllers (“PLC”)**
+**- PLC Field Wiring**
+**- PLC Programming (Ladder Logic)**
+**- Modbus TCP Protocol**
+**- HMI design in Ignition**
+**- Motor Controllers**
 ## Attack!
-- OT Network RECONNAISSANCE
-- Process Takeover
-- Modbus Man in the Middle
-- HMI Takeover
+**- OT Network RECONNAISSANCE**
+**- Process Takeover**
+**- Modbus Man in the Middle**
+**- HMI Takeover**
 ## Contribute!
-- Make new attack paths.
-- Create new OT functionality.
-- Grow your skills through contribution!
+**- Make new attack paths.**
+**- Create new OT functionality.**
+**- Grow your skills through contribution!**
 
 # Building The Kit!
 ## Videos!
