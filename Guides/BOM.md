@@ -12,6 +12,7 @@ These are the components you will need to assemble the kit.
 | 24vdc computer fan        | https://a.co/d/i0H5ePE | Any 24vdc device will work.                                                                    |
 | ice cube relays           | https://a.co/d/5EVRxJn | Not necessarily required.                                                                      |
 | 24vdc power supply        | https://a.co/d/9KYU2kr |                                                                                                |
-| 18 awg wire (red, black)  | https://a.co/d/ev9czMS | only suitable for 24v maximum. https://a.co/d/68HA1yZ if you want something more high quality. |
+| 18 awg wire (red, black)  | https://a.co/d/68HA1yZ |                                                                                                |
 | plywood to mount DIN rail | Scavenge.              |                                                                                                |
+
 
