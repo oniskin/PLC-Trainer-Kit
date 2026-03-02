@@ -13,5 +13,6 @@ These are the components you will need to assemble the kit.
 | ice cube relays           | https://a.co/d/5EVRxJn | Not necessarily required.                                                                      |
 | 24vdc power supply        | https://a.co/d/9KYU2kr |                                                                                                |
 | 18 awg wire (red, black)  | https://a.co/d/68HA1yZ |                                                                                                |
-| DIN-Rail Mount Desk Stand | [The RIG (R1.1) — DIY helper stand.] (https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
+| DIN-Rail Mount Desk Stand | [The RIG (R1.1) — DIY helper stand.](https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
 | plywood to mount DIN rail | Scavenge.              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
+
