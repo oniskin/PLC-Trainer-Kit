@@ -13,7 +13,7 @@ If so, **this kit is for you!**
 - - Includes all kit components, tools, and virtual machines upon request.
 2. [Buy the fully assembled kit!](https://orenniskin.com/store) (get hacking fast, complete with physical kit and Virtual Machines)
 - - Includes fully assembled kit, tools, and virtual machines.
-3. [Buy the components yourself](https://github.com/oniskin/PLC-Trainer-Kit/blob/main/Guides/BOM.md), Build it yourself! (college version! :smiley:)
+3. [Buy the components yourself](blob/main/Guides/BOM.md), Build it yourself! (college version! :smiley:)
 - - Buy components off the Bill of Materials.
 
 # What You'll Learn
