@@ -8,14 +8,6 @@ Are you looking to go beyond virtual machines and into the real world?
 
 If so, **this kit is for you!**
 
-# Kit Options
-1. [Buy the kit](https://orenniskin.com/store). Build it yourself! (learn the most, takes the most time)
-- - Includes all kit components, tools, and virtual machines upon request.
-2. [Buy the fully assembled kit!](https://orenniskin.com/store) (get hacking fast, complete with physical kit and Virtual Machines)
-- - Includes fully assembled kit, tools, and virtual machines.
-3. [Buy the components yourself](Guides/BOM.md), Build it yourself! (college version! :smiley:)
-- - Buy components off the Bill of Materials.
-
 # What You'll Learn
 ## Build:
 - **Programmable Logic Controllers (“PLC”)**
@@ -33,6 +25,14 @@ If so, **this kit is for you!**
 - **Make new attack paths.**
 - **Create new OT functionality.**
 - **Grow your skills through contribution!**
+
+# Kit Options
+1. [Buy the kit](https://orenniskin.com/store). Build it yourself! (learn the most, takes the most time)
+- - Includes all kit components, tools, and virtual machines upon request.
+2. [Buy the fully assembled kit!](https://orenniskin.com/store) (get hacking fast, complete with physical kit and Virtual Machines)
+- - Includes fully assembled kit, tools, and virtual machines.
+3. [Buy the components yourself](Guides/BOM.md), Build it yourself! (college version! :smiley:)
+- - Buy components off the Bill of Materials.
 
 # Building The Kit!
 ## Videos!
