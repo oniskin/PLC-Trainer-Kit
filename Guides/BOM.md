@@ -1,4 +1,6 @@
 # PLC Trainer Kit - Bill of Materials
+
+## Kit materials
 These are the components you will need to assemble the kit.
 | **Item**                  | **link**               | **Notes**                                                                                      |
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
@@ -16,4 +18,8 @@ These are the components you will need to assemble the kit.
 | DIN-Rail Mount Desk Stand | [The RIG (R1.1) — DIY helper stand.](https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | 3D Print this awesome desk stand!                                                 |
 | plywood to mount DIN rail | Scavenge.              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
 
-
+## Tools Required
+| **Item**                  | **link**               | **Notes**                                                                                      |
+|---------------------------|------------------------|------------------------------------------------------------------------------------------------|
+| Slotted Screwdriver 2.5mm | [WT26025](https://www.automationdirect.com/adc/shopping/catalog/tools_-a-_test_equipment/screwdrivers_-a-_nutdrivers/single_screwdrivers/wt26025)               | Wiha tools will make you look like a pro. 😏                                                 |
+| Wire Strippers            | [S1020SOLUS](https://www.automationdirect.com/adc/shopping/catalog/tools_-a-_test_equipment/pliers_-a-_cutting_tools/wire_-a-_cable_stripping_tools/s1020solus)               | Or get it at your local hardware store.                                                            |
