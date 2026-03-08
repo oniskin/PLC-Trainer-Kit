@@ -11,6 +11,7 @@ These are the components you will need to assemble the kit.
 | green button + light      | [GCX3202-24](https://www.automationdirect.com/pn/GCX3202-24)             | Any button or 24vdc light will work                                                            |
 | terminal blocks           | [KN-T12GRY-25](https://www.automationdirect.com/pn/KN-T12GRY-25)           | Factory Realistic!                                                                             |
 | terminal block jumpers    | [KN-10J12](https://www.automationdirect.com/adc/shopping/catalog/wire_-a-_cable_termination/terminal_blocks/jumpers/kn-10j12)               | Factory Realistic!                                                                             |
+| 5A Circuit Breaker        | [GMCB-1B-5](https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/miniature_supplementary_protectors/gmcb-1b-5)              | Protection if you accidentally cross those 24vdc wires. 😆            |
 | 24vdc computer fan        | https://a.co/d/i0H5ePE | Any 24vdc device will work.                                                                    |
 | ice cube relays           | https://a.co/d/5EVRxJn | Not necessarily required.                                                                      |
 | 18 awg wire (red, black)  | https://a.co/d/68HA1yZ |                                                                                                |
@@ -48,6 +49,7 @@ Pretty cool desk stand, but it takes much more time than just screwing to a shee
 | Ubuntu Desktop            | [Download](https://ubuntu.com/download/desktop)               | Free                              |
 | Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial (2 hour time limit)    |
 | Click PLC Programming Software      | [Download](https://www.automationdirect.com/support/software-downloads?itemcode=CLICK)               | Free                    |
+
 
 
 
