@@ -31,4 +31,5 @@ These are the components you will need to assemble the kit.
 | Vmware Workstation Pro | [Download](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)               | Free (recently)      |
 | Ubuntu Desktop            | [Download](https://ubuntu.com/download/desktop)               | Free                              |
 | Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial                        |
-| Click PLC Programming Software      | [Download](https://ubuntu.com/download/desktop)               | Free                    |
+| Click PLC Programming Software      | [Download](https://www.automationdirect.com/support/software-downloads?itemcode=CLICK)               | Free                    |
+
