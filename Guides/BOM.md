@@ -15,9 +15,6 @@ These are the components you will need to assemble the kit.
 | ice cube relays           | https://a.co/d/5EVRxJn | Not necessarily required.                                                                      |
 | 18 awg wire (red, black)  | https://a.co/d/68HA1yZ |                                                                                                |
 | 24vdc power supply        | https://a.co/d/07YIhIGT | Power adaptor with pre-built 120vac connections.                                               |
-| DIN-Rail Mount Desk Stand | [The RIG (R1.1) — DIY helper stand.](https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | 3D Print this awesome desk stand!                                                 |
-| Button panel | [Download](Button%20Panel.stl)           | 3D Printed panel that holds the buttons.       |
-| plywood to mount DIN rail | Scavenge.              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
 
 > [!Caution]
 > If you'd like a more authentic industrial power supply, use below.
@@ -27,6 +24,15 @@ These are the components you will need to assemble the kit.
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
 | 24vdc power supply        | https://a.co/d/9KYU2kr | For experienced Electricians...                                                                |
 | Power Cord                | https://a.co/d/04hKPep8 | for use with above 24vdc power supply.                                                        |
+
+### Kit 3D-Printed Desk Stand
+Pretty cool desk stand, but it takes much more time than just screwing to a sheet of plywood.
+| **Item**                  | **link**               | **Notes**                                                                                      |
+|---------------------------|------------------------|------------------------------------------------------------------------------------------------|
+| DIN-Rail Mount Desk Stand | [The RIG (R1.1) — DIY helper stand.](https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | 3D Print this awesome desk stand!                                                 |
+| Button panel | [Download](Button%20Panel.stl)           | 3D Printed panel that holds the buttons.       |
+| **OR** |         | If you dont want to spend time 3D printing...                                         |
+| plywood to mount DIN rail | Scavenge.              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
 
 ## Tools Required
 | **Item**                  | **link**               | **Notes**                                                                                      |
@@ -42,6 +48,7 @@ These are the components you will need to assemble the kit.
 | Ubuntu Desktop            | [Download](https://ubuntu.com/download/desktop)               | Free                              |
 | Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial                        |
 | Click PLC Programming Software      | [Download](https://www.automationdirect.com/support/software-downloads?itemcode=CLICK)               | Free                    |
+
 
 
 
