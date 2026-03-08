@@ -46,8 +46,9 @@ Pretty cool desk stand, but it takes much more time than just screwing to a shee
 | Microsoft Windows 11      | [Download](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise)               | Free Trial (you most likely have Windows)               |
 | Vmware Workstation Pro | [Download](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)               | Free (recently)      |
 | Ubuntu Desktop            | [Download](https://ubuntu.com/download/desktop)               | Free                              |
-| Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial                        |
+| Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial (2 hour time limit)    |
 | Click PLC Programming Software      | [Download](https://www.automationdirect.com/support/software-downloads?itemcode=CLICK)               | Free                    |
+
 
 
 
