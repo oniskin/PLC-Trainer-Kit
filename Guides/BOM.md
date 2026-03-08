@@ -21,6 +21,7 @@ These are the components you will need to assemble the kit.
 > [!NOTE]
 > If you'd like a more authentic industrial power supply, use below.
 > Note that this requires making 120vac electrical connections and should only be performed by experienced electricians.
+
 | **Item**                  | **link**               | **Notes**                                                                                      |
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
 | 24vdc power supply        | https://a.co/d/9KYU2kr | For experienced Electricians...                                                                |
@@ -40,6 +41,7 @@ These are the components you will need to assemble the kit.
 | Ubuntu Desktop            | [Download](https://ubuntu.com/download/desktop)               | Free                              |
 | Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial                        |
 | Click PLC Programming Software      | [Download](https://www.automationdirect.com/support/software-downloads?itemcode=CLICK)               | Free                    |
+
 
 
 
