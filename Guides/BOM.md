@@ -23,3 +23,12 @@ These are the components you will need to assemble the kit.
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
 | Slotted Screwdriver 2.5mm | [WT26025](https://www.automationdirect.com/adc/shopping/catalog/tools_-a-_test_equipment/screwdrivers_-a-_nutdrivers/single_screwdrivers/wt26025)               | Wiha tools will make you look like a pro. 😏                                                 |
 | Wire Strippers            | [S1020SOLUS](https://www.automationdirect.com/adc/shopping/catalog/tools_-a-_test_equipment/pliers_-a-_cutting_tools/wire_-a-_cable_stripping_tools/s1020solus)               | Or get it at your local hardware store.                                                            |
+
+## Software Required
+| **Item**                  | **link**               | **Notes**                                                                                      |
+|---------------------------|------------------------|------------------------------------------------------------------------------------------------|
+| Microsoft Windows 11      | [Download](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise)               | Free Trial (you most likely have Windows)               |
+| Vmware Workstation Pro | [Download](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)               | Free (recently)      |
+| Ubuntu Desktop            | [Download](https://ubuntu.com/download/desktop)               | Free                              |
+| Ignition            | [Download](https://inductiveautomation.com/downloads/)              | Free Trial                        |
+| Click PLC Programming Software      | [Download](https://ubuntu.com/download/desktop)               | Free                    |
