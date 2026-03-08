@@ -38,7 +38,7 @@ If so, **this kit is for you!**
 ## Videos!
 I'll be live streaming building this kit every week!
 Stay tuned to the [@PacketsOrItDidntHappen YouTube channel](https://www.youtube.com/@PacketsOrItDidntHappen)!
-- Episode 1: Demo-ing the kit. What the heck is this thing?
+- [Episode 1: Demo-ing the kit. What the heck is this thing?[(https://www.youtube.com/live/a5_kdfI3hPU?si=9CvtAl6AMEbSubjH)
 - Episode 2: Wiring the PLC!
 
 ## Step-by-Step Guides!
