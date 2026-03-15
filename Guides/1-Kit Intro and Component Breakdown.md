@@ -5,7 +5,7 @@ This PLC Trainer Kit gives you a safe, hands-on sandbox to experiment with real 
 
 [Watch Episode 1 for a video demo of the kit!](https://www.youtube.com/live/a5_kdfI3hPU?si=pSVASpcHnVvqubO_)
 
-<img src="https://images.squarespace-cdn.com/content/v1/694c006e29d3b800d6ac8e71/1773586726745-33581MVLY2QVDRWYR3BN/B903A7B0-CCF0-4AE3-BC4A-1F39D3AD4A34.jpeg?format=400w" width="400" alt="Wiring the kit!" />
+<img src="https://images.squarespace-cdn.com/content/v1/694c006e29d3b800d6ac8e71/76ea585c-a516-46c2-84d4-b6523452bfb7/IMG_7571.jpeg?format=800w" width="400" alt="Wiring the kit!" />
 <img src="https://images.squarespace-cdn.com/content/v1/694c006e29d3b800d6ac8e71/1773586728356-8R0S0RSE4NMPCUEBL72F/FEB3A019-CA51-46A7-AA74-46DD96FA77D5.jpeg?format=800w" width="400" alt="Completed kit front" />
 
 # What's Inside: Component Breakdown
