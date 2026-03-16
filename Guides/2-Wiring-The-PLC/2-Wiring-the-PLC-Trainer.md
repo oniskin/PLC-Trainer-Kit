@@ -29,7 +29,7 @@ By the end, you should have an understanding of the devices listed in the previo
 
 Watch the Livestream demonstration of wiring the kit! (Coming soon...)
 
-This section seems a little short. But with the wiring diagrams and the video guide, you should have what you need.
+> Note: This section seems a little short. But with the wiring diagrams and the video guide, you should have what you need.
 
 Let me know if this is not the case.
 
