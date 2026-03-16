@@ -25,6 +25,11 @@ By the end, you should have an understanding of the devices listed in the previo
 
 1. Identify the components from the previous section.
 2. Wire the kit according to the [Wiring Diagram](../../Wiring%20Diagrams/Kit%20Diagram%20Step-by-step.pdf). This wiring diagram covers each device on their own page, providing a step-by-step wiring guide.
+
+This section seems a little short. But with the wiring diagrams and the video guide, you should have what you need.
+
+Let me know if this is not the case.
+
 3. Double check your wiring.
 
 Watch the Livestream demonstration of wiring the kit! (Coming soon...)
