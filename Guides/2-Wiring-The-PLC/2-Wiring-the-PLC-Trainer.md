@@ -23,7 +23,7 @@ By the end, you should have an understanding of the devices listed in the previo
 
 # Guide.
 
-> [!WARNING]
+> [!CAUTION]
 > 24Vdc should be safe to work on, but you should still follow basic electrical safety requirements, including:
 > 1. Work when you're healthy (not sick).
 > 2. Turn the power to the kit **OFF** at the circuit breaker and remove the power plug before touching wiring/connections.
