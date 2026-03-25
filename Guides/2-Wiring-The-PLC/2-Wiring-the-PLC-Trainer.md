@@ -34,9 +34,13 @@ By the end, you should have an understanding of the devices listed in the previo
 2. Wire the kit according to the [Wiring Diagram](../../Wiring%20Diagrams/Kit%20Diagram%20Step-by-step.pdf). This wiring diagram covers each device on their own page, providing a step-by-step wiring guide.
 3. Double check your wiring.
 
+### Wiring the PLC Power
 More information on wiring the PLC **CPU power supply** connections is on pg. 22 of the [Click Plus PLC CPU manual](https://cdn.automationdirect.com/static/manuals/c2userm/ch3.pdf).
 
+### Wiring the PLC Inputs and Outputs
 More information on wiring the PLC **CPU inputs and output** connections is on pg. 33 of the [Click Plus PLC CPU manual](https://cdn.automationdirect.com/static/manuals/c2userm/ch3.pdf)
+
+### Conclusion
 
 Watch the Livestream demonstration of wiring the kit! (Coming soon...)
 
