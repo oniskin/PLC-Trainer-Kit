@@ -50,7 +50,7 @@ Before you start programming, you'll need the Click PLC software installed and c
 
 ### Initial setup to connect to the PLC
 
-OK, we were cheap and didn't buy the $42 Automation Direct RS232 serial cable.
+OK, we were cheap and didn't buy the *$42* Automation Direct RS232 serial cable.
 A true professional would use this cable to connect to the PLC via serial so that the initial networking config can be applied.
 
 Since we don't have a cable, we need a workaround.
