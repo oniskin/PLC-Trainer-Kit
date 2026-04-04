@@ -9,9 +9,11 @@ Programming the PLC is where industrial logic comes to life. You'll take the phy
 
 The fundamentals you'll learn here are used in power plants, factories, and critical infrastructure worldwide.
 
-In this guide, you'll learn ladder logic programming on a real, industry-standard PLC—no simulators, pure industrial engineering.
+In this guide, you'll learn ladder logic programming on a real, industry-standard PLC.
 
 Watch the [LIVESTREAM](https://www.youtube.com/live/xun7izINi8M) on YouTube!
+
+<img src="thumbnail3.png" width="400" alt="Wiring the kit!" />
 
 # Objectives. What you'll learn.
 
