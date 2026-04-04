@@ -11,6 +11,8 @@ The fundamentals you'll learn here are used in power plants, factories, and crit
 
 In this guide, you'll learn ladder logic programming on a real, industry-standard PLC—no simulators, pure industrial engineering.
 
+Watch the [LIVESTREAM](https://www.youtube.com/live/xun7izINi8M) on YouTube!
+
 # Objectives. What you'll learn.
 
 By the end of this guide, you should understand:
