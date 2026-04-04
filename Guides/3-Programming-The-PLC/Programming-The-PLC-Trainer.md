@@ -85,11 +85,45 @@ Congrats! You're Connected.
 
 ### Ladder Logic Basics
 
+#### Terminology
+
+- Rung - Each line of a Ladder Logic program.
+
 #### Normally Open (NO) Contacts
+
+Normally Open (NO) switch contact 
+- At rest, when the button is not pushed, electric current is not allowed to pass. The switch is open.
+- When the button is pushed, electric current IS allowed to pass. The switch is closed.
+
+The START button is NO.
 
 #### Normally Closed (NC) Contacts
 
+Normally Closed (NC) switch contact
+- At rest, when the button is not pushed, electric current IS allowed to pass. The switch is closed.
+- When the button is pushed, electric current IS NOT allowed to pass. The switch is open.
+
+The STOP button is NC.
+
 ### Programming the logic.
+
+Click in the menu on the right to drag two NO contacts onto the top Ladder *Rung*.
+
+Quick question. WHY, oh WHY, would we have **2** NO contacts?
+1 for the START button and one for the STOP button.
+But wait! I thought the STOP button was NC??
+
+Crazy part: It is. Physically, the STOP switch is NC. Therefore, when the button is not pressed, current is allowed through the switch and the input is activated (set to TRUE).
+
+So, for our program to work, we need to make the STOP contact NO in the Ladder Logic.
+
+Confused? Just think of it like this. Normally Closed switch inverts the signal (not pressed = input turns true).
+
+If we also had NC in the program, this would turn the value BACK to false.
+
+It's kind of like multiplying by -1. If you do it twice, you're back to where you started.
+
+Confused? You can read more [here](https://www.plcacademy.com/normally-closed-stop-button/).
 
 ## Part 3: Running Your First Program - Input/Output Control
 
