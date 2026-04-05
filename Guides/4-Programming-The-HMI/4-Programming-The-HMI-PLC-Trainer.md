@@ -1,4 +1,4 @@
-# Introduction.
+# Introduction
 
 You have your kit all wired and your PLC is programmed!
 You have a working OT system.
@@ -8,9 +8,10 @@ You have a working OT system.
 THIS is where things get interesting.
 
 This is where we connect our industrial PLC to more traditional ***IT*** systems to:
-1. Visualize and control the process in centralized control rooms (or across the globe).
-2. Collect data for Cloud, AI, optimization, and so much more.
-3. Provide Operations, management, sales, and many more with access to live OT data.
+
+- Visualize and control the process in centralized control rooms (or across the globe).
+- Collect data for Cloud, AI, optimization, and so much more.
+- Provide Operations, management, sales, and many more with access to live OT data.
 
 You can see how this is both valuable and complex.
 This is probably why there are SO MANY jobs available on LinkedIn for Ignition engineers.
@@ -27,9 +28,10 @@ Watch the [LIVESTREAM](https://www.youtube.com/) on YouTube! (Coming Soon...)
 
 <img src="youtube thumbnail4.png" width="400" alt="Programming the HMI!" />
 
-# Objectives. What you'll learn.
+# Objectives
 
 By the end of this guide, you should understand:
+
 - Ignition HMI design and configuration
 - Connecting Ignition to a PLC
 - Creating Tags to track process values
@@ -46,13 +48,14 @@ Before you start programming, you'll need the Ignition software installed and co
 > [!NOTE]
 > See the [Bill of Materials](../BOM.md) for software download links.
 
-## Prerequisites:
+## Prerequisites
+
 - Ubuntu 24.04 Virtual Machine
 - Ethernet connection from the machine to your PLC and Ignition Gateway
 - Installation file for Ignition by Inductive Automation (Free trial or licensed) — Download from [Inductive Automation](https://inductiveautomation.com/)
 - Connection to the Internet to download applications like MySQL
 
-# Guide.
+# Guide
 
 ## Part 1: Installing and Setting Up Ignition
 
@@ -60,13 +63,15 @@ Before you start programming, you'll need the Ignition software installed and co
 
 1. Go to the Inductive Automation website and download the Ignition installer.
 
-Choose *Ignition - Linux Installer 64-bit (1.9 GB)*
+   Choose *Ignition - Linux Installer 64-bit (1.9 GB)*
 
 2. Run the installer and follow the prompts to install the Ignition Gateway.
-```
-chmod +x ignition-8.3.4-linux-64-installer.run
-./ignition-8.3.4-linux-64-installer.run
-```
+
+   ```
+   chmod +x ignition-8.3.4-linux-64-installer.run
+   ./ignition-8.3.4-linux-64-installer.run
+   ```
+
 3. Start the Ignition Gateway service. (it should start automatically).
 4. Open a web browser and navigate to `http://localhost:8088` (or the configured port) to compete the installation.
 
@@ -93,12 +98,14 @@ For more information, see [Startup Guide](https://www.docs.inductiveautomation.c
 
 1. To the right of the PLC Connection, click the three dots. Then click `Addresses`.
 2. Fill out the addresses like in the screenshot below. This will add:
-- Start and Stop button **Discrete Inputs**.
-- Fan motor, Running Light, and Stopped Light **Coils**. 
+
+   - Start and Stop button **Discrete Inputs**.
+   - Fan motor, Running Light, and Stopped Light **Coils**.
 
 <img src="PLC Addresses 1.png" alt="Modbus registers in Ignition." />
 
 For more information, see [Modbus Connectivity](https://www.docs.inductiveautomation.com/docs/8.3/connectivity/modbus-connectivity).
+
 ## Part 2: Creating Your First Ignition Project
 
 ### Setting Up a New Project
@@ -143,31 +150,41 @@ Before setting up data logging, we need a database to store the historical data.
 1. Open the MySQL Command Line Client or MySQL Workbench.
 2. Log in as root.
 3. Create a new database for Ignition:
+
    ```
    CREATE DATABASE ignition;
    ```
+
 4. Create a new user for Ignition:
+
    ```
    CREATE USER 'ignition_user'@'localhost' IDENTIFIED BY 'password';
    ```
+
    (Replace 'password' with a secure password)
+
 5. Grant privileges to the user on the database:
+
    ```
    GRANT ALL PRIVILEGES ON ignition.* TO 'ignition_user'@'localhost';
    ```
+
 6. Flush privileges:
+
    ```
    FLUSH PRIVILEGES;
    ```
+
 7. Exit the MySQL client.
 
 This sets up MySQL with a dedicated database and user for Ignition to use.
 
-### Set up a database connection (we'll be using MySQL).
+### Set up a database connection (we'll be using MySQL)
 
 1. In the Ignition Gateway portal, click `Connections` -> `Databases` -> `Connections`.
 2. Click `Create new database Connection`.
-3. Configure the database settings as in the picture below. 
+3. Configure the database settings as in the picture below.
+
 > [!Note]
 > Don't forget to change `test` to `ignition` at the end of the database URL. (That got me for several hours. lol)
 
@@ -177,9 +194,11 @@ This sets up MySQL with a dedicated database and user for Ignition to use.
 For more information, see [Database Connections](https://www.docs.inductiveautomation.com/docs/8.3/sql-bridge/database-connections).
 
 4. If you are successful, you will see a big green `Connected`. Great job!
-6. Now that you have a successful connection, you need to enable the **Core Historian Module** in Ignition.
-- From the Ignition Gateway portal, go to `Services` -> `Historians` and click `Core Historian`.
-5. The final step is to launch Designer and configure Hostorian for each tag.
+5. Now that you have a successful connection, you need to enable the **Core Historian Module** in Ignition.
+
+   - From the Ignition Gateway portal, go to `Services` -> `Historians` and click `Core Historian`.
+
+6. The final step is to launch Designer and configure Hostorian for each tag.
 
 For more information, see [Ignition Historian](https://www.docs.inductiveautomation.com/docs/8.3/historian).
 
