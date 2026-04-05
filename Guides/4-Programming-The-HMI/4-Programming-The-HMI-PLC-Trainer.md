@@ -24,7 +24,7 @@ In this guide, you'll learn HMI design and programming using Ignition by Inducti
 
 For more information about Ignition, see [Introducing Ignition](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/introducing-ignition).
 
-Watch the [LIVESTREAM](https://www.youtube.com/) on YouTube! (Coming Soon...)
+Watch the [LIVESTREAM](https://youtube.com/live/We5AOxugrl4) on YouTube!
 
 <img src="youtube thumbnail4.png" width="400" alt="Programming the HMI!" />
 
