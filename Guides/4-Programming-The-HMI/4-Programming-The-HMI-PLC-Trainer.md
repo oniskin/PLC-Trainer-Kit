@@ -13,6 +13,8 @@ The fundamentals you'll learn here are used in power plants, factories, and crit
 
 In this guide, you'll learn HMI design and programming using Ignition by Inductive Automation.
 
+For more information about Ignition, see [Introducing Ignition](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/introducing-ignition).
+
 Watch the [LIVESTREAM](https://www.youtube.com/live/xun7izINi8M) on YouTube!
 
 <img src="thumbnail4.png" width="400" alt="Programming the HMI!" />
@@ -53,15 +55,39 @@ Before you start programming, you'll need the Ignition software installed and co
 Choose *Ignition - Linux Installer 64-bit (1.9 GB)*
 
 2. Run the installer and follow the prompts to install the Ignition Gateway.
+```
+chmod +x ignition-8.3.4-linux-64-installer.run
+./ignition-8.3.4-linux-64-installer.run
+```
+3. Start the Ignition Gateway service. (it should start automatically).
+4. Open a web browser and navigate to `http://localhost:8088` (or the configured port) to compete the installation.
 
-3. Start the Ignition Gateway service.
+For more information, see [Installing and Upgrading Ignition](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/installing-and-upgrading).
 
 ### Accessing the Ignition Designer
 
 1. Open a web browser and navigate to `http://localhost:8088` (or the configured port).
-2. Log in with the default credentials (admin/admin).
-3. Launch the Designer.
+2. Log in with the credentials you created during the installation (admin/admin).
+3. Click "Launch Designer" in the upper right of the page. This will download and run a Java application.
 
+For more information, see [Startup Guide](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/startup-guide).
+
+### Connecting to the PLC
+
+1. From the Ignition Gateway portal, click `Configure`.
+2. Add a new device connection.
+3. Select `Modbus TCP` as the protocol.
+4. Enter the device IP Address for your Click PLC CPU Ethernet (mine was 192.168.0.10).
+5. Leave the rest. TCP port should be 502 (default for ModbusTCP).
+6. If successful, it will say `Connected`.
+
+#### Configuring Ignition to read/write Modbus Addresses in the PLC
+
+1. To the right of the PLC Connection, click the three dots. Then click `Addresses`.
+2. Fill out the addresses like in the screenshot below. This will add:
+- Start and Stop button **Discrete Inputs**.
+- Fan motor, Running Light, and Stopped Light **Coils**. 
+For more information, see [Modbus Connectivity](https://www.docs.inductiveautomation.com/docs/8.3/connectivity/modbus-connectivity).
 ## Part 2: Creating Your First Ignition Project
 
 ### Setting Up a New Project
@@ -69,11 +95,7 @@ Choose *Ignition - Linux Installer 64-bit (1.9 GB)*
 1. In the Designer, create a new project.
 2. Configure the project settings.
 
-### Connecting to the PLC
-
-1. Add a device connection to your Click PLC.
-2. Configure the IP address and communication settings.
-3. Test the connection.
+For more information, see [Projects](https://www.docs.inductiveautomation.com/docs/8.3/designer/projects).
 
 ## Part 3: Designing the HMI Interface
 
@@ -82,11 +104,15 @@ Choose *Ignition - Linux Installer 64-bit (1.9 GB)*
 1. Design a main screen with motor control buttons (Start/Stop).
 2. Add indicators for motor status.
 
+For more information, see [Vision Windows](https://www.docs.inductiveautomation.com/docs/8.3/vision/windows).
+
 ### Motor Control Logic
 
 1. Create tags for motor start/stop commands.
 2. Bind buttons to write to these tags.
 3. Read motor status from PLC tags.
+
+For more information, see [Tags](https://www.docs.inductiveautomation.com/docs/8.3/tags) and [Vision Components](https://www.docs.inductiveautomation.com/docs/8.3/vision/components).
 
 ## Part 4: Tracking Motor Usage
 
@@ -126,16 +152,29 @@ Before setting up data logging, we need a database to store the historical data.
 
 This sets up MySQL with a dedicated database and user for Ignition to use.
 
-### Data Logging
+### Set up a database connection (we'll be using MySQL).
 
-1. Set up a database connection (we'll be using MySQL).
-2. Create transaction groups to log motor run time.
-3. Configure historical data storage.
+1. In the Ignition Gateway portal, click `Connections` -> `Databases` -> `Connections`.
+2. Click `Create new database Connection`.
+3. Configure the database settings as in the picture below. 
+> [!Note]
+> Don't forget to change `test` to `ignition` at the end of the database URL. (That got me for several hours. lol)
+
+For more information, see [Database Connections](https://www.docs.inductiveautomation.com/docs/8.3/sql-bridge/database-connections).
+
+4. If you are successful, you will see a big green `Connected`. Great job!
+6. Now that you have a successful connection, you need to enable the **Core Historian Module** in Ignition.
+- From the Ignition Gateway portal, go to `Services` -> `Historians` and click `Core Historian`.
+5. The final step is to launch Designer and configure Hostorian for each tag.
+
+For more information, see [Ignition Historian](https://www.docs.inductiveautomation.com/docs/8.3/historian).
 
 ### Creating Charts and Reports
 
 1. Add a chart component to display usage over time.
 2. Create reports for motor usage statistics.
+
+For more information, see [Chart Component](https://www.docs.inductiveautomation.com/docs/8.3/vision/components/chart) and [Reporting](https://www.docs.inductiveautomation.com/docs/8.3/reporting).
 
 ## Part 5: Testing & Debugging
 
@@ -161,3 +200,6 @@ Ready to take it further?
 
 Explore advanced Ignition features like scripting, alarming, and multi-user access!
 
+Our next Episode will dive deep into the packet-level ModbusTCP communications between the HMI and the PLC.
+
+***Stay Tuned!!***
