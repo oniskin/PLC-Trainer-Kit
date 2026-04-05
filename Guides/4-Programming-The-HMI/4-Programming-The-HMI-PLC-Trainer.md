@@ -95,6 +95,9 @@ For more information, see [Startup Guide](https://www.docs.inductiveautomation.c
 2. Fill out the addresses like in the screenshot below. This will add:
 - Start and Stop button **Discrete Inputs**.
 - Fan motor, Running Light, and Stopped Light **Coils**. 
+
+<img src="PLC Addresses 1.png" alt="Modbus registers in Ignition." />
+
 For more information, see [Modbus Connectivity](https://www.docs.inductiveautomation.com/docs/8.3/connectivity/modbus-connectivity).
 ## Part 2: Creating Your First Ignition Project
 
@@ -167,6 +170,9 @@ This sets up MySQL with a dedicated database and user for Ignition to use.
 3. Configure the database settings as in the picture below. 
 > [!Note]
 > Don't forget to change `test` to `ignition` at the end of the database URL. (That got me for several hours. lol)
+
+<img src="database1.png" alt="Modbus registers in Ignition." />
+<img src="database2.png" alt="Modbus registers in Ignition." />
 
 For more information, see [Database Connections](https://www.docs.inductiveautomation.com/docs/8.3/sql-bridge/database-connections).
 
