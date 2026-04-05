@@ -41,7 +41,7 @@ Stay tuned to the [@PacketsOrItDidntHappen YouTube channel](https://www.youtube.
 - [Episode 1: Demo-ing the kit. What the heck is this thing?](https://www.youtube.com/live/a5_kdfI3hPU?si=9CvtAl6AMEbSubjH)
 - [Episode 2: Wiring the PLC!](https://youtube.com/live/yhx_D9G6TL8)
 - [Episode 3: Programming the PLC!](https://youtube.com/live/xun7izINi8M)
-- Episode 4: Programming the HMI! (Coming Soon...)
+- [Episode 4: Programming the HMI!](https://youtube.com/live/We5AOxugrl4)
 
 ## Step-by-Step Guides!
 See the Guides folder.
