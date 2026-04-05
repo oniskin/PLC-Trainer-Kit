@@ -7,6 +7,14 @@ You have a working OT system.
 
 THIS is where things get interesting.
 
+This is where we connect our industrial PLC to more traditional ***IT*** systems to:
+1. Visualize and control the process in centralized control rooms (or across the globe).
+2. Collect data for Cloud, AI, optimization, and so much more.
+3. Provide Operations, management, sales, and many more with access to live OT data.
+
+You can see how this is both valuable and complex.
+This is probably why there are SO MANY jobs available on LinkedIn for Ignition engineers.
+
 Programming the Ignition HMI is where industrial visualization comes to life. You'll create a user interface for your motor controller that allows operators to control the motor and monitor its usage over time.
 
 The fundamentals you'll learn here are used in power plants, factories, and critical infrastructure worldwide.
@@ -15,9 +23,9 @@ In this guide, you'll learn HMI design and programming using Ignition by Inducti
 
 For more information about Ignition, see [Introducing Ignition](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/introducing-ignition).
 
-Watch the [LIVESTREAM](https://www.youtube.com/live/xun7izINi8M) on YouTube!
+Watch the [LIVESTREAM](https://www.youtube.com/) on YouTube! (Coming Soon...)
 
-<img src="thumbnail4.png" width="400" alt="Programming the HMI!" />
+<img src="youtube thumbnail4.png" width="400" alt="Programming the HMI!" />
 
 # Objectives. What you'll learn.
 
