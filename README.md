@@ -1,4 +1,7 @@
 # PLC-Trainer-Kit
+
+![Packets Or It Didn't Happen!!](POIDH-Logo.jpg)
+
 Packets-or-it-didn't-happen PLC Trainer Kit - Get hands on experience with Programmable Logic Controllers (PLCs) and Human Machine Interfaces (HMIs), dissecting OT protocols, and attacking OT processes.
 
 Learn the specialized technologies used in factories, oil rigs, refineries, power plants, water utilities, and all the other industrial control systems that keep our society alive.
@@ -7,6 +10,8 @@ Are you looking to gain Valuable hands-on OT experience without breaking the ban
 Are you looking to go beyond virtual machines and into the real world?
 
 If so, **this kit is for you!**
+
+![Fully Assembled Kit!!](kit-front.png)
 
 # What You'll Learn
 ## Build:
