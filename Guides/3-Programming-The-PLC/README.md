@@ -83,7 +83,6 @@ Congrats! You're Connected.
 
 ### Updating your PLC's firmware
 
-<<<<<<< HEAD
 Click **PLC** -> **Update Firmware** on the top menu.
 
 ![Update Firmware Button](update-firmware2.png)
@@ -94,10 +93,6 @@ A dialog will open with the following information comparing the installed firmwa
 
 Click Update.
 
-=======
-![Updating PLC firmware menu.](update-firmware.png)
-
->>>>>>> a591f99172f712579a1b31199fadc6304bee55fa
 ### Configuring your PLC's networking interface
 
 Update your PLCs IP address to:
@@ -115,18 +110,13 @@ Click **Setup** for **Port 1 - Ethernet**
 
 Configure Port 1 as follows:
 
-=======
->>>>>>> a591f99172f712579a1b31199fadc6304bee55fa
 - **IP**: `192.168.0.10`
 - **Subnet Mask**: `255.255.255.0`
 - **Gateway**: Not required.
 - **DNS Servers**: Not required.
 
-<<<<<<< HEAD
 ![Ethernet Port Configuration](comm-port3.png)
 
-=======
->>>>>>> a591f99172f712579a1b31199fadc6304bee55fa
 You can test this with a ping command from your Engineering Workstation:
 ```
 ping 192.168.0.10
