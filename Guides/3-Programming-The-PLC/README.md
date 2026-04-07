@@ -97,7 +97,6 @@ Click Update.
 
 Update your PLCs IP address to:
 
-<<<<<<< HEAD
 Click **Home** -> **PLC** Dropdown -> **Comm Port**
 
 ![Access Comm Port setup menu](comm-port1.png)
