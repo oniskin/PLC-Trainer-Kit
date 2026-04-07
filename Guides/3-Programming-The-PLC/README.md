@@ -57,11 +57,11 @@ Since we don't have a cable, we need a workaround.
 
 These PLCs are configured by default for DHCP. Since we don't have a DHCP server on our network, it will naturally fall back to what they call an *APIPA (Automatic Private IP Addressing)* address, which look like `169.254.x.x`.
 
-Sooo, we will change our Windows IP address to: 
-IP: `169.254.0.9`
-Subnet Mask: `255.255.0.0`
-No gateway necessary.
-No DNS servers necessary.
+Sooo, we will change our Windows - IP address to: 
+- **IP**: `169.254.0.9`
+- **Subnet Mask**: `255.255.0.0`
+- No gateway necessary.
+- No DNS servers necessary.
 
 ### Connecting to your PLC with the Click Programming Software
 
@@ -69,9 +69,13 @@ Open the Click PLC programming software installed previously.
 
 You should see an option to "Connect to a PLC." Click that.
 
+![Click Connect to PLC](Connecting-to-PLC.png)
+
 Now you should see a table of Click PLCs available on the network. If you see a PLC, you're ***WINNING!*** Great job.
 
-Click that PLC and click "Connect to PLC"
+![Click Connect!](Connecting-to-PLC2.png)
+
+Click that PLC and click "Connect"
 
 The default password is in the picture. :smiley: use it.
 
@@ -79,9 +83,48 @@ Congrats! You're Connected.
 
 ### Updating your PLC's firmware
 
+Click **PLC** -> **Update Firmware** on the top menu.
+
+![Update Firmware Button](update-firmware2.png)
+
+A dialog will open with the following information comparing the installed firmware with the manufacturer's latest releases.
+
+![Updating PLC firmware menu.](update-firmware.png)
+
+Click Update.
+
 ### Configuring your PLC's networking interface
 
+Update your PLCs IP address to:
+
+Click **Home** -> **PLC** Dropdown -> **Comm Port**
+
+![Access Comm Port setup menu](comm-port1.png)
+
+This will open a dialog to select which comm port you want to configure.
+
+Click **Setup** for **Port 1 - Ethernet**
+
+![Comm port config dialog](comm-port2.png)
+
+Configure Port 1 as follows:
+
+- **IP**: `192.168.0.10`
+- **Subnet Mask**: `255.255.255.0`
+- **Gateway**: Not required.
+- **DNS Servers**: Not required.
+
+![Ethernet Port Configuration](comm-port3.png)
+
+You can test this with a ping command from your Engineering Workstation:
+```
+ping 192.168.0.10
+```
 ## Part 2: Programming your first Ladder Logic application
+
+Create the following PLC program using the Click programming software GUI:
+
+![Ladder Logic - 4 Rung PLC Program](programming-plc.png)
 
 ### Ladder Logic Basics
 
