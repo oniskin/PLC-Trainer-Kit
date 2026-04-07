@@ -69,9 +69,13 @@ Open the Click PLC programming software installed previously.
 
 You should see an option to "Connect to a PLC." Click that.
 
+![Click Connect to PLC](Connecting-to-PLC.png)
+
 Now you should see a table of Click PLCs available on the network. If you see a PLC, you're ***WINNING!*** Great job.
 
-Click that PLC and click "Connect to PLC"
+![Click Connect!](Connecting-to-PLC2.png)
+
+Click that PLC and click "Connect"
 
 The default password is in the picture. :smiley: use it.
 
@@ -79,8 +83,21 @@ Congrats! You're Connected.
 
 ### Updating your PLC's firmware
 
+![Updating PLC firmware menu.](update-firmware.png)
+
 ### Configuring your PLC's networking interface
 
+Update your PLCs IP address to:
+
+- **IP**: `192.168.0.10`
+- **Subnet Mask**: `255.255.255.0`
+- **Gateway**: Not required.
+- **DNS Servers**: Not required.
+
+You can test this with a ping command from your Engineering Workstation:
+```
+ping 192.168.0.10
+```
 ## Part 2: Programming your first Ladder Logic application
 
 ### Ladder Logic Basics
