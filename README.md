@@ -16,6 +16,8 @@
 
 ⚡ Gain practical skills that bridge cyber and operational technology
 
+![Fully Assembled Kit](kit-front.png)
+
 ## What you'll learn 📚
 
 ### 🛠️ Build
