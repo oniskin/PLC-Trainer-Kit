@@ -77,14 +77,6 @@ Before you start programming, you'll need the Ignition software installed and co
 
 For more information, see [Installing and Upgrading Ignition](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/installing-and-upgrading).
 
-### Accessing the Ignition Designer
-
-1. Open a web browser and navigate to `http://localhost:8088` (or the configured port).
-2. Log in with the credentials you created during the installation (admin/admin).
-3. Click "Launch Designer" in the upper right of the page. This will download and run a Java application.
-
-For more information, see [Startup Guide](https://www.docs.inductiveautomation.com/docs/8.3/getting-started/startup-guide).
-
 ### Connecting to the PLC
 
 1. From the Ignition Gateway portal, click `Configure`.
@@ -104,7 +96,15 @@ For more information, see [Startup Guide](https://www.docs.inductiveautomation.c
 
 <img src="PLC Addresses 1.png" alt="Modbus registers in Ignition." />
 
-For more information, see [Modbus Connectivity](https://www.docs.inductiveautomation.com/docs/8.3/connectivity/modbus-connectivity).
+For more information, see [Connecting to a Modbus Device](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/opc-ua/opc-ua-drivers/modbus/connecting-to-modbus-device).
+
+### Accessing the Ignition Designer
+
+1. Open a web browser and navigate to `http://localhost:8088` (or the configured port).
+2. Log in with the credentials you created during the installation.
+3. Click "Launch Designer" in the upper right of the page. This will download and run a Java application.
+
+For more information, see [Designer Launcher](https://www.docs.inductiveautomation.com/docs/8.3/launchers-and-workstation/designer-launcher).
 
 ## Part 2: Creating Your First Ignition Project
 
@@ -113,7 +113,7 @@ For more information, see [Modbus Connectivity](https://www.docs.inductiveautoma
 1. In the Designer, create a new project.
 2. Configure the project settings.
 
-For more information, see [Projects](https://www.docs.inductiveautomation.com/docs/8.3/designer/projects).
+For more information, see [Vision Ignition Module](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/vision).
 
 ## Part 3: Designing the HMI Interface
 
@@ -122,7 +122,7 @@ For more information, see [Projects](https://www.docs.inductiveautomation.com/do
 1. Design a main screen with motor control buttons (Start/Stop).
 2. Add indicators for motor status.
 
-For more information, see [Vision Windows](https://www.docs.inductiveautomation.com/docs/8.3/vision/windows).
+For more information, see [Vision Windows](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/vision/vision-windows).
 
 ### Motor Control Logic
 
@@ -138,17 +138,14 @@ For more information, see [Tags](https://www.docs.inductiveautomation.com/docs/8
 
 Before setting up data logging, we need a database to store the historical data. We'll use MySQL Community Edition.
 
-#### Downloading and Installing MySQL
-
-1. Go to the [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/) page.
-2. Download the MySQL Installer for Windows.
-3. Run the installer and select "Developer Default" or "Server only" setup type.
-4. Follow the installation wizard, setting a root password when prompted.
-
-#### Initial Configuration
-
-1. Open the MySQL Command Line Client or MySQL Workbench.
-2. Log in as root.
+1. Install MySQL Server.
+   ```
+   sudo apt install mysql-server
+   ```
+2. Open the MySQL Command Line Client or MySQL Workbench as root.
+   ```
+   mysql -u root
+   ```
 3. Create a new database for Ignition:
 
    ```
@@ -158,7 +155,7 @@ Before setting up data logging, we need a database to store the historical data.
 4. Create a new user for Ignition:
 
    ```
-   CREATE USER 'ignition_user'@'localhost' IDENTIFIED BY 'password';
+   CREATE USER 'ignition'@'localhost' IDENTIFIED BY 'password';
    ```
 
    (Replace 'password' with a secure password)
@@ -166,7 +163,7 @@ Before setting up data logging, we need a database to store the historical data.
 5. Grant privileges to the user on the database:
 
    ```
-   GRANT ALL PRIVILEGES ON ignition.* TO 'ignition_user'@'localhost';
+   GRANT ALL PRIVILEGES ON ignition.* TO 'ignition'@'localhost';
    ```
 
 6. Flush privileges:
@@ -176,8 +173,27 @@ Before setting up data logging, we need a database to store the historical data.
    ```
 
 7. Exit the MySQL client.
+   ```
+   exit
+   ```
 
 This sets up MySQL with a dedicated database and user for Ignition to use.
+
+### Installing the MySQL Connector in Ignition
+
+Unfortunately, Ignition does not ship with a connector for MySQL. We will have to load the Java Database Connector (**JDBC**) for MySQL.
+
+1. Download the [MySQL JDBC](https://dev.mysql.com/downloads/connector/j/).
+> [!Note]
+> Choose the "platform independent" version. This will provide the `.jar` file we are looking for.
+
+2. In the Ignition Gateway portal, go to `Connections`->`Databases`->`Settings`.
+
+3. You will see MySQL connector has an error. Click on the three dots and and upload the `.jar` file.
+
+4. If you're successful, you will see the MySQL database turn green.
+
+For more information, see [JDBC Connectors in Ignition](https://www.docs.inductiveautomation.com/docs/8.3/platform/database-connections/connecting-to-databases/jdbc-drivers-and-translators).
 
 ### Set up a database connection (we'll be using MySQL)
 
@@ -185,29 +201,32 @@ This sets up MySQL with a dedicated database and user for Ignition to use.
 2. Click `Create new database Connection`.
 3. Configure the database settings as in the picture below.
 
-> [!Note]
+> [!NOTE]
 > Don't forget to change `test` to `ignition` at the end of the database URL. (That got me for several hours. lol)
 
 <img src="database1.png" alt="Modbus registers in Ignition." />
 <img src="database2.png" alt="Modbus registers in Ignition." />
 
-For more information, see [Database Connections](https://www.docs.inductiveautomation.com/docs/8.3/sql-bridge/database-connections).
+For more information, see [Database Connections](https://www.docs.inductiveautomation.com/docs/8.3/platform/database-connections).
 
 4. If you are successful, you will see a big green `Connected`. Great job!
-5. Now that you have a successful connection, you need to enable the **Core Historian Module** in Ignition.
+
+### Enable the Core Historian Module in Ignition
+
+1. Now that you have a successful connection, you need to enable the **Core Historian Module** in Ignition.
 
    - From the Ignition Gateway portal, go to `Services` -> `Historians` and click `Core Historian`.
 
-6. The final step is to launch Designer and configure Hostorian for each tag.
+2. The final step is to launch Designer and configure Hostorian for each tag.
 
-For more information, see [Ignition Historian](https://www.docs.inductiveautomation.com/docs/8.3/historian).
+For more information, see [Ignition Historian](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/vision/historian-in-vision).
 
 ### Creating Charts and Reports
 
 1. Add a chart component to display usage over time.
 2. Create reports for motor usage statistics.
 
-For more information, see [Chart Component](https://www.docs.inductiveautomation.com/docs/8.3/vision/components/chart) and [Reporting](https://www.docs.inductiveautomation.com/docs/8.3/reporting).
+For more information, see [Easy Chart Component](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/vision/historian-in-vision).
 
 ## Part 5: Testing & Debugging
 
