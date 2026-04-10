@@ -130,7 +130,7 @@ For more information, see [Vision Windows](https://www.docs.inductiveautomation.
 2. Bind buttons to write to these tags.
 3. Read motor status from PLC tags.
 
-For more information, see [Tags](https://www.docs.inductiveautomation.com/docs/8.3/tags) and [Vision Components](https://www.docs.inductiveautomation.com/docs/8.3/vision/components).
+For more information, see [Tags](https://www.docs.inductiveautomation.com/docs/8.3/platform/tags) and [Vision Components](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/vision/working-with-vision-components).
 
 ## Part 4: Tracking Motor Usage
 
