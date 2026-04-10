@@ -179,6 +179,8 @@ Before setting up data logging, we need a database to store the historical data.
 
 This sets up MySQL with a dedicated database and user for Ignition to use.
 
+For more information, see [Install and configure a MySQL server](https://ubuntu.com/server/docs/how-to/databases/install-mysql/)
+
 ### Installing the MySQL Connector in Ignition
 
 Unfortunately, Ignition does not ship with a connector for MySQL. We will have to load the Java Database Connector (**JDBC**) for MySQL.
