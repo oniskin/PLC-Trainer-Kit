@@ -39,7 +39,7 @@
 - Extend OT functionality
 - Share improvements with the community
 
-    ***THIS IS WHY IT'S ON GITHUB, PEOPLE!*** **Send me alllll your pull requests**
+***THIS IS WHY IT'S ON GITHUB, PEOPLE!*** **Send me alllll your pull requests**
 
 ---
 
