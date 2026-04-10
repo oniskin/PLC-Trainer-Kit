@@ -185,7 +185,7 @@ Unfortunately, Ignition does not ship with a connector for MySQL. We will have t
 
 1. Download the [MySQL JDBC](https://dev.mysql.com/downloads/connector/j/).
 > [!Note]
-> Choose the "platform independent" version. This will provide the `.jar` file we are looking for.
+> Choose the **platform independent** version. This will provide the `.jar` file we are looking for.
 
 2. In the Ignition Gateway portal, go to `Connections`->`Databases`->`Settings`.
 
