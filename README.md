@@ -49,7 +49,7 @@
 |---|---|---|
 | 1. [DIY Kit](https://orenniskin.com/store) | Learners who want the deepest experience | Kit components, screwdriver, and optional VM access |
 | 2. [Fully Assembled Kit](https://orenniskin.com/store) | Fast setup and immediate hacking | Prebuilt physical kit, screwdriver, and VMs |
-| 3. [Component-Only](Guides/BOM.md) | Budget builders & students | Buy parts from the [BOM](Guides/BOM.md) and assemble yourself |
+| 3. [Component-Only](Kit-Build-Guides/BOM.md) | Budget builders & students | Buy parts from the [BOM](Kit-Build-Guides/BOM.md) and assemble yourself |
 
 > Ready to get started? Check the [store](https://orenniskin.com/store) or open the guides for full instructions.
 
@@ -70,12 +70,12 @@ I’m streaming the build process live — follow along and learn each step in r
 
 ## Step-by-step guides 🧭
 
-Everything is organized in the `Guides/` folder. Start with the intro and follow the wiring, programming, and HMI chapters.
+Everything is organized in the `Kit-Build-Guides/` folder. Start with the intro and follow the wiring, programming, and HMI chapters.
 
-- `Guides/1-Kit-Intro/README.md`
-- `Guides/2-Wiring-The-PLC/README.md`
-- `Guides/3-Programming-The-PLC/README.md`
-- `Guides/4-Programming-The-HMI/README.md`
+- `Kit-Build-Guides/1-Kit-Intro/README.md`
+- `Kit-Build-Guides/2-Wiring-The-PLC/README.md`
+- `Kit-Build-Guides/3-Programming-The-PLC/README.md`
+- `Kit-Build-Guides/4-Programming-The-HMI/README.md`
 
 ---
 

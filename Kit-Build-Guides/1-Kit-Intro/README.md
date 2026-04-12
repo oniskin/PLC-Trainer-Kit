@@ -11,7 +11,7 @@ This PLC Trainer Kit gives you a safe, hands-on sandbox to experiment with real 
 # What's Inside: Component Breakdown
 > [!NOTE]
 > You can purchase a kit [here](https://orenniskin.com/store)!
-> Or, see the [Bill of Materials (BOM)](https://github.com/oniskin/PLC-Trainer-Kit/blob/main/Guides/BOM.md) for detailed parts information!
+> Or, see the [Bill of Materials (BOM)](../BOM.mdKit-Build-Guides/BOM.md) for detailed parts information!
 
 ## The Brain: Click PLC CPU and I/O Card (C2-08DR-6V)
 - **Click PLC Plus CPU (C2-01CPU)** - The heart of your trainer kit. This compact programmable logic controller executes your logic programs and makes decisions based on sensor inputs. It's industry-standard, stackable, and perfect for learning real PLC programming.
@@ -85,6 +85,6 @@ Click PLC Programming Software (Free) — Program your PLC
 Ignition (Free Trial) — Create industrial dashboards and HMIs
 Windows, Ubuntu, and VMware — Run your development environment
 # Ready to Build?
-Now that you know what makes this kit tick, it's time to start wiring! Head over to our [Wiring Diagrams](https://github.com/oniskin/PLC-Trainer-Kit/wiki/wiring-diagrams-page) section to follow step-by-step assembly instructions. Whether you're a complete beginner or an experienced technician, you'll be programming real industrial logic in no time.
+Now that you know what makes this kit tick, it's time to start wiring! Head over to our guide to [Wiring The PLC](../2-Wiring-The-PLC/README.md) section to follow step-by-step assembly instructions. Whether you're a complete beginner or an experienced technician, you'll be programming real industrial logic in no time.
 
 Let's get started! 🚀
