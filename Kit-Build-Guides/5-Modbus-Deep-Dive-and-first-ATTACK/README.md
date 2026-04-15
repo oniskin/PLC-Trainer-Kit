@@ -24,6 +24,12 @@ Today we will explore the ModbusTCP protocol by examining the packets flying bet
 
 - Initiatee an ***arp spoof attack!*** (this will place our Kali machine in the  middle of the PLC-to-HMI network connection).
 
+Watch the [LIVESTREAM](https://www.youtube.com/live/MQFppslgP8k?si=rsgO88wHy-eugFyR) on YouTube!
+
+<img src="yt-thumbnail5.png" width="400" alt="Modbus Deep Dive and FIRST ATTACKS!" />
+
+---
+
 # Exploring ModbusTCP
 
 ## Starting Wireshark
