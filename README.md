@@ -63,6 +63,7 @@ I’m streaming the build process live — follow along and learn each step in r
 - [Episode 2: Wiring the PLC](https://youtube.com/live/yhx_D9G6TL8)
 - [Episode 3: Programming the PLC](https://youtube.com/live/xun7izINi8M)
 - [Episode 4: Programming the HMI](https://youtube.com/live/We5AOxugrl4)
+- [Episode 5: Modbus Deep Dive and FIRST ATTACKS!](https://www.youtube.com/live/MQFppslgP8k?si=rsgO88wHy-eugFyR)
 
 > Subscribe to [@PacketsOrItDidntHappen on YouTube](https://www.youtube.com/@PacketsOrItDidntHappen) for updates and new episodes.
 
