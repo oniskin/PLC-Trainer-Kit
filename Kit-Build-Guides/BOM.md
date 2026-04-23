@@ -2,16 +2,20 @@
 
 ## Kit materials
 These are the components you will need to assemble the kit.
+
+>[!Note]
+>Supply of these... *affordable* items can sometimes be unreliable. If an item is backordered and an alternative is not suggested here, let me know!
+
 | **Item**                  | **link**               | **Notes**                                                                                      |
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
 | Click PLC Plus CPU        | [C2-01CPU](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpus/c2-01cpu)               | Configure with CPU + IO Card together                                                          |
-| PLC I/O Card              | [C2-08DR-6V](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules/c2-08dr-6v)             |                                                                                                |
+| PLC I/O Card              | [C2-08DR-6V](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules/c2-08dr-6v)             | If backorered, get a [C2-08D2-6V](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules/c2-08d2-6v)                                                                                            |
 | Din rail                  | [DN-R35S1-2](https://www.automationdirect.com/pn/DN-R35S1-2)             | 2 meters of DIN Rail. Enough for multiple kits.                                                |
 | red pushbutton + light    | [GCX3201-24](https://www.automationdirect.com/pn/GCX3201-24)             | Any button or 24vdc light will work                                                            |
 | green button + light      | [GCX3202-24](https://www.automationdirect.com/pn/GCX3202-24)             | Any button or 24vdc light will work                                                            |
 | terminal blocks           | [KN-T12GRY-25](https://www.automationdirect.com/pn/KN-T12GRY-25)           | Factory Realistic!                                                                             |
 | terminal block jumpers    | [KN-10J12](https://www.automationdirect.com/adc/shopping/catalog/wire_-a-_cable_termination/terminal_blocks/jumpers/kn-10j12)               | Factory Realistic!                                                                             |
-| 5A Circuit Breaker        | [GMCB-1B-5](https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/miniature_supplementary_protectors/gmcb-1b-5)              | Protection if you accidentally cross those 24vdc wires. 😆            |
+| 5A Circuit Breaker        | [GMCB-1B-5](https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/miniature_supplementary_protectors/gmcb-1b-5)              | Protection if you accidentally cross those 24vdc wires. 😆  (if backordered, get [GMCB-1C-5](https://www.automationdirect.com/adc/shopping/catalog/circuit_protection_-z-_fuses_-z-_disconnects/circuit_breakers_-a-_circuit_protectors/miniature_supplementary_protectors/gmcb-1c-5). The only difference is [C-Curve vs B-Curve](https://www.chintglobal.com/global/en/about-us/news-center/blog/guide-to-mcb-trip-curves--selecting-the-right-b--c--or-d-curve-f.html). C curve is meant for more industrial motor applications, but will have to do if B-curve is backordered.          |
 | 24vdc computer fan        | https://a.co/d/i0H5ePE | Any 24vdc device will work.                                                                    |
 | ice cube relays           | https://a.co/d/5EVRxJn | Not necessarily required.                                                                      |
 | 18 awg wire (red, black)  | https://a.co/d/68HA1yZ |                                                                                                |
