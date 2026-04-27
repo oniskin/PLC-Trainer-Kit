@@ -19,6 +19,7 @@ These are the components you will need to assemble the kit.
 | 24vdc computer fan        | https://a.co/d/i0H5ePE | Any 24vdc device will work.                                                                    |
 | ice cube relays           | https://a.co/d/5EVRxJn | Not necessarily required.                                                                      |
 | 18 awg wire (red, black)  | https://a.co/d/68HA1yZ |                                                                                                |
+| Wire Duct (a.k.a Panduit Cover)  | [https://a.co/d/68HA1yZ](https://a.co/d/03FSjYRJ) | Not necessarily required.                                    |
 | 24vdc power supply        | https://a.co/d/07YIhIGT | Power adaptor with pre-built 120vac connections.                                               |
 
 > [!Caution]
