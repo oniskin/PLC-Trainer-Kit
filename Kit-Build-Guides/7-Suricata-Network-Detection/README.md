@@ -90,6 +90,8 @@ sudo systemctl status suricata
 
 Status check should say it's running.
 
+### Sending a test alert!
+
 ```
 sudo tail -f /var/log/suricata/fast.log
 ```
@@ -97,6 +99,14 @@ sudo tail -f /var/log/suricata/fast.log
 ```
 curl http://testmynids.org/uid/index.html
 ```
+
+If the interface you are monitoring does not have Internet access (as it should be in OT), you can send the string the rule is looking for with Netcat.
+```
+echo "uid=0(root) gid=0(root) groups=0(root)" | nc 192.168.0.10 4444
+```
+
+For more information on how rules work:
+[8.1 Rules Format](https://docs.suricata.io/en/latest/rules/intro.html)
 
 # Rogue Modbus Detections!
 
@@ -108,7 +118,7 @@ Following from this, we need to define the **Modbus clients and servers**.
 
 ### Defining Modbus Clients and Servers in Suricata
 
-Open the config file and edit the ```MODBUS_CLIENT``` and ```MODBUS_SERVER``` variables.
+Open the config file (remember, it's ```sudo vim /etc/suricata/suricata.yaml```  )and edit the ```MODBUS_CLIENT``` and ```MODBUS_SERVER``` variables.
 
 ```
     MODBUS_CLIENT: "[192.168.0.3/32]"     # Address of the Ignition Gateway
@@ -133,6 +143,12 @@ Enable modbus protocol:
 
       # Stream reassembly size for modbus. By default track it completely.
       stream-depth: 0
+```
+
+Finally, test your new configuration. Run this command every chance you get!
+
+```
+sudo suricata -T -c /etc/suricata/suricata.yaml -v
 ```
 
 ### Now add Suricata rules to detect Rogue Modbus Commands!
