@@ -37,7 +37,7 @@
 ### 🌱 Contribute
 - Add new attack paths
 - Extend OT functionality
-- Share improvements with the community
+- [Share improvements with the community](Awesome-Community-Builds/README.md)
 
 ***THIS IS WHY IT'S ON GITHUB, PEOPLE!*** **Send me alllll your pull requests**
 
