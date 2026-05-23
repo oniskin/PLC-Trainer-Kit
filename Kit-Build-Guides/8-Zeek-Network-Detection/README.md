@@ -14,10 +14,10 @@ Sound like fun?
 
 # First, Let's get Zeek running
 
-### Install Suricata.
+### Install Zeek.
 
 First, you'll need an Ubuntu virtual machine.
-I'm using the same virtual machine from the [Suricata install](Kit-Build-Guides/7-Suricata-Network-Detection/README.md) we just did.
+I'm using the same virtual machine from the [Suricata install](../7-Suricata-Network-Detection/README.md) we just did.
 
 Next, install Zeek  following the Documentation [Installing Zeek](https://docs.zeek.org/en/lts/install.html).
 
@@ -68,7 +68,7 @@ You should see a bunch of logs. Follow the quick start guide.
 
 # Configure Zeek to listen to LIVE network traffic
 
-Like in the [Suricata install](Kit-Build-Guides/7-Suricata-Network-Detection/README.md), we will configure Zeek to listen to the proper interface.
+Like in the [Suricata install](../7-Suricata-Network-Detection/README.md), we will configure Zeek to listen to the proper interface.
 
 ```
 analyst@nsm:~$ ip a
@@ -85,7 +85,7 @@ Open the config file.
 sudo vim /opt/zeek/etc/node.cfg
 ```
 
-Then go to the ```af-packet``` section, changing the default value to the name of the network interface Suricata should be listening to.
+Then go to and change the default value to the name of the network interface Zeek should be listening to.
 
 ```
 # Example ZeekControl node configuration.
@@ -172,7 +172,9 @@ analyst@nsm:~/zeek$ sudo zcat /opt/zeek/logs/2026-05-23/modbus.11:23:23-11:24:29
 1779553405.588462	CbZ28x2qJnDfXoiHL5	192.168.0.3	49339	192.168.0.10	502	913	0	READ_DISCRETE_INPUTS	RESP	-
 ```
 
-If that's hard to read, we can only select certain columns with the `zeekcut` utility. Critical!
+If that's hard to read, we can only select certain columns with the `zeekcut` utility. Critical to keep your sanity!
+
+In this example, I used `zeekcut` to only show origin IP, destination IP, and the Modbus function code.
 
 ```
 analyst@nsm:~/zeek$ sudo zcat /opt/zeek/logs/2026-05-23/modbus.11:23:23-11:24:29.log.gz | zeek-cut id.orig_h id.resp_h func
