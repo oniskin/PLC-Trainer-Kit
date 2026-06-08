@@ -1,0 +1,82 @@
+{
+  local_certs
+  admin localhost:2019
+  log {
+    format json
+  }
+}
+
+neuronex.factory.home.lab {
+  tls internal
+  reverse_proxy neuronex:8085 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options SAMEORIGIN
+    Referrer-Policy strict-origin-when-cross-origin
+    -Server
+  }
+  log {
+    output file /var/log/caddy/neuronex.log {
+      roll_size 10mb
+      roll_keep 3
+    }
+  }
+}
+
+hivemq.factory.home.lab {
+  tls internal
+  reverse_proxy hivemq-ce:8080 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options SAMEORIGIN
+    Referrer-Policy strict-origin-when-cross-origin
+    -Server
+  }
+  log {
+    output file /var/log/caddy/hivemq.log {
+      roll_size 10mb
+      roll_keep 3
+    }
+  }
+}
+
+# NOTE: -a flag in docker-compose.yml must match this hostname
+ignition.factory.home.lab {
+  tls internal
+  reverse_proxy ignition:8088 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+    transport http {
+      dial_timeout 30s
+      response_header_timeout 60s
+    }
+  }
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options SAMEORIGIN
+    Referrer-Policy strict-origin-when-cross-origin
+    -Server
+  }
+  log {
+    output file /var/log/caddy/ignition.log {
+      roll_size 10mb
+      roll_keep 3
+    }
+  }
+}
+
+http:// {
+  redir https://{host}{uri} permanent
+}
