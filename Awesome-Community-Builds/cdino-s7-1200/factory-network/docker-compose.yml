@@ -1,0 +1,160 @@
+# =============================================================================
+# Factory Homelab - Docker Compose
+# Services: NeuronEX · HiveMQ CE · Ignition · Caddy
+# Network: factory-stack (internal bridge)
+# Secrets: admin passwords read from files, never hardcoded
+# =============================================================================
+
+name: factory-homelab
+
+secrets:
+  ignition_admin_password:
+    file: ./secrets/ignition_admin_password
+
+volumes:
+  neuronex-data:
+  hivemq-data:
+  hivemq-logs:
+  ignition-data:
+  caddy-data:     # persists TLS certs
+  caddy-config:
+
+networks:
+  factory-stack:
+    driver: bridge
+    internal: false   # must stay false - Ignition needs internet for licence
+
+services:
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      - factory-stack
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "caddy", "version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  neuronex:
+    image: emqx/neuronex:3.7.1
+    container_name: neuronex
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "127.0.0.1:8085:8085"   # loopback - Caddy proxies externally
+    volumes:
+      - neuronex-data:/opt/neuronex/data
+    networks:
+      - factory-stack
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8085/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  hivemq:
+    image: hivemq/hivemq-ce:2026.5
+    container_name: hivemq-ce
+    restart: unless-stopped
+    environment:
+      HIVEMQ_LOG_LEVEL: INFO
+    ports:
+      - "1883:1883"               # MQTT - LAN-exposed for S7-1200/Neuron
+                                        # NOTE: HiveMQ CE has no web UI
+                                        # Control Centre is commercial only
+    volumes:
+      - hivemq-data:/opt/hivemq/data
+      - hivemq-logs:/opt/hivemq/log
+    networks:
+      - factory-stack
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "echo > /dev/tcp/localhost/1883"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  ignition:
+    image: inductiveautomation/ignition:latest
+    container_name: ignition
+    restart: unless-stopped
+    pull_policy: always
+    ports:
+      - "8088:8088"
+      - "8043:8043"
+    volumes:
+      - ignition-data:/usr/local/bin/ignition/data
+      - ./modules:/modules   # pre-load third-party .modl files here
+                             # Ignition auto-installs on startup
+                             # Required: MQTT-Engine-signed.modl from
+                             # https://inductiveautomation.com/downloads/ignition
+    environment:
+      ACCEPT_IGNITION_EULA: "Y"
+      GATEWAY_ADMIN_USERNAME: ${GATEWAY_ADMIN_USERNAME:-admin}
+      GATEWAY_ADMIN_PASSWORD_FILE: /run/secrets/ignition_admin_password
+      IGNITION_EDITION: ${IGNITION_EDITION:-maker}
+      IGNITION_LICENSE_KEY: ${IGNITION_LICENSE_KEY:-}
+      IGNITION_ACTIVATION_TOKEN: ${IGNITION_ACTIVATION_TOKEN:-}
+      TZ: ${TZ:-Europe/London}
+      DISABLE_QUICKSTART: "true"
+      GATEWAY_MODULES_ENABLED: >-
+        perspective,
+        tag-historian,
+        alarm-notification,
+        opc-ua,
+        modbus-driver-v2,
+        reporting,
+        sql-bridge,
+        symbol-factory,
+        audit-log
+    secrets:
+      - ignition_admin_password
+    networks:
+      - factory-stack
+    depends_on:
+      hivemq:
+        condition: service_healthy
+    command: >
+      -n homelab-gateway
+      -a ignition.factory.home.lab
+      -h 8088
+      -s 8043
+      -m 1024
+    logging:
+      driver: json-file
+      options:
+        max-size: "100m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8088/StatusPing"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s

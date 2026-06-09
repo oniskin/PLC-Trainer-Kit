@@ -33,7 +33,7 @@ Before you start programming, you'll need the Click PLC software installed and c
 > See the [Bill of Materials](../BOM.md) for software download links.
 
 ## Required Software:
-- Click PLC Programming Software (Free) — Download from [Automation Direct](https://www.automationdirect.com/)
+- Click PLC Programming Software (Free) - Download from [Automation Direct](https://www.automationdirect.com/)
 - Windows PC or Virtual Machine
 - Ethernet connection from the Windows machine to your PLC
 

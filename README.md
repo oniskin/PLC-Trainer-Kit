@@ -2,7 +2,7 @@
 
 ![Packets Or It Didn't Happen!!](POIDH-Logo.jpg)
 
-**Packets-or-it-didn't-happen PLC Trainer Kit** gives you real, hands-on experience with industrial control systems, PLCs, HMIs, and OT security — without expensive factory hardware.
+**Packets-or-it-didn't-happen PLC Trainer Kit** gives you real, hands-on experience with industrial control systems, PLCs, HMIs, and OT security - without expensive factory hardware.
 
 > Learn how the systems behind factories, refineries, power plants, water utilities, and industrial operations really work.
 
@@ -57,9 +57,9 @@
 
 ## Build with us 🧩
 
-I’m streaming the build process live — follow along and learn each step in real time.
+I’m streaming the build process live - follow along and learn each step in real time.
 
-- [Episode 1: Demo-ing the kit — what is this thing?](https://www.youtube.com/live/a5_kdfI3hPU?si=9CvtAl6AMEbSubjH)
+- [Episode 1: Demo-ing the kit - what is this thing?](https://www.youtube.com/live/a5_kdfI3hPU?si=9CvtAl6AMEbSubjH)
 - [Episode 2: Wiring the PLC](https://youtube.com/live/yhx_D9G6TL8)
 - [Episode 3: Programming the PLC](https://youtube.com/live/xun7izINi8M)
 - [Episode 4: Programming the HMI](https://youtube.com/live/We5AOxugrl4)

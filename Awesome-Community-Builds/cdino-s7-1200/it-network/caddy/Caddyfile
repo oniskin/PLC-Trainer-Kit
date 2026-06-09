@@ -1,0 +1,43 @@
+{
+  local_certs
+  admin localhost:2019
+  log {
+    format json
+  }
+}
+
+grafana.home.lab {
+  tls internal
+  reverse_proxy grafana:3000 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options SAMEORIGIN
+    Referrer-Policy strict-origin-when-cross-origin
+    -Server
+  }
+}
+
+influxdb.home.lab {
+  tls internal
+  reverse_proxy influxdb:8086 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options SAMEORIGIN
+    Referrer-Policy strict-origin-when-cross-origin
+    -Server
+  }
+}
+
+http:// {
+  redir https://{host}{uri} permanent
+}
