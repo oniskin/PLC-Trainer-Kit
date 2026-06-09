@@ -1,37 +1,47 @@
-# cdino's s7-1200 PLC lab
-## DISCLAIMER
-I am not an automation engineer. I don't have an electrical engineering background, I've never been trained in automation, PLCs, wiring, etc - I've learned all of this from collegues and YouTube (and a little Claude). Therefore, please do take what I'm saying RE wiring, PLC programming, terminal blocks, etc, with a good pinch of salt. If you see something I've done in my design that is dumb (or dangerous!!) please get in touch and let me know, as I'm keen to refine this project as much as possible.
+# cdino's S7-1200 PLC Lab
+
+## Disclaimer
+
+I am not an automation engineer. I don't have an electrical engineering background, I've never been trained in automation, PLCs, wiring, etc - I've learned all of this from colleagues, YouTube, and a little Claude. Please take what I say about wiring, PLC programming, terminal blocks, and so on with a healthy pinch of salt. If you spot something dumb or dangerous in my design, please get in touch - I'm genuinely keen to refine this as much as possible.
 
 ## Index
-- [BOM](BOM.md)
-- [Network Diagram](network.md)
+
+- [Bill of Materials](BOM.md)
+- [Network](network.md)
+- [Wiring](wiring.md)
 
 ## About
-This design is presented by me, [Christopher Di-Nozzi](https://www.linkedin.com/in/christopher-d-794b35166/). My background is OT systems and security, meaning I am quite comfortable on a Linux machine or wireshark, but not so expereienced with designing, wiring, and programming automation gear all by myself. This project has, therefore, been a wonderful learning experience and I would encourage you, if you're considering it, to undertake this, or a similar hardware based, project to sharepen your skills and get a small taste of what engineers face.
+
+This project is put together by me, [Christopher Di-Nozzi](https://www.linkedin.com/in/christopher-d-794b35166/). My background is OT systems and security - I'm comfortable on a Linux machine or in Wireshark, but designing, wiring, and programming automation gear from scratch is a different world entirely. It's been a proper rabbit hole and I've enjoyed every bit of it. If you're on the fence about doing something similar, just start - you'll learn more from the mistakes than anything else.
+
+The goal of this project is twofold: build something that mirrors a realistic industrial environment closely enough to be useful for security research and demonstration, and generate content for [Dead Band](https://cdino.net), my newsletter for OT security practitioners.
 
 ### Why the S7-1200?
-I wanted to use industrial gear as much as possible to heighten realism. The S7-1200 is still a popular PLC CPU found in sites across the world. It also supports a variety of protocols including:
-* Modbus
-* OPC-UA
-* SNMP
-* HTTP(s)
-* PROFINET
-* ARP
-* S7 Communication
 
-This expands the attack surface, creating more opportunities to learn.
+I wanted to use real industrial gear rather than simulated environments - the realism matters when you're trying to understand how attacks actually work in production. The S7-1200 is still widely deployed across manufacturing sites and it supports a broad range of protocols:
+
+- Modbus TCP
+- OPC-UA
+- S7 Communication (port 102)
+- PROFINET
+- HTTP/HTTPS
+- SNMP
+- ARP
+
+If you're coming at this from a security background, that's exactly the point - more protocols means more attack surface, and more attack surface means more to learn. Each of those protocols has its own quirks, vulnerabilities, and security controls (or lack thereof), and having a physical device to test against makes the difference between reading about an attack and actually understanding it.
 
 ## Gallery
-![first POC](media/first_poc.jpg)
 
-![second POC](media/second_poc.jpg)
+![First proof of concept](media/first_poc.jpg)
 
-![stage one of the build](media/stage1.jpg)
+![Second proof of concept, starting to take shape](media/second_poc.jpg)
 
-![stage two of the build](media/stage2.jpg)
+![Stage one - DIN rail and PSU mounted](media/stage1.jpg)
 
-![stage three of the build](media/stage3.jpg)
+![Stage two - terminal blocks and wiring started](media/stage2.jpg)
 
-![stage four of the build](media/stage4.jpg)
+![Stage three - PLC and components mounted](media/stage3.jpg)
 
-![stage five of the build](media/stage5.jpg)
+![Stage four - wiring mostly complete](media/stage4.jpg)
+
+![Stage five - finished build](media/stage5.jpg)

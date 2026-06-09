@@ -1,7 +1,7 @@
 # Why This Kit?
 Operational Technology (OT) and Industrial Control Systems (ICS) power the critical infrastructure that keeps our world running, from power grids to manufacturing facilities. For cybersecurity professionals, engineers, and curious learners, understanding how these systems work is essential.
 
-This PLC Trainer Kit gives you a safe, hands-on sandbox to experiment with real programmable logic controllers (PLCs), digital I/O, and industrial wiring—all without the risks of touching production systems. You'll learn how industrial devices communicate, process inputs, and control outputs in the real world.
+This PLC Trainer Kit gives you a safe, hands-on sandbox to experiment with real programmable logic controllers (PLCs), digital I/O, and industrial wiring-all without the risks of touching production systems. You'll learn how industrial devices communicate, process inputs, and control outputs in the real world.
 
 [Watch Episode 1 for a video demo of the kit!](https://www.youtube.com/live/a5_kdfI3hPU?si=pSVASpcHnVvqubO_)
 
@@ -41,7 +41,7 @@ Once you've mastered this, you can add on with much more complex processes!
 
 ## The Infrastructure: 
 Factory-realistic wire termination. Instead of breadboards or jumper wires, you'll learn proper industrial wiring practices with screw-terminal connections and jumpers. This is how real systems are built.
-- **DIN Rail (DN-R35S1-2)** - The industrial standard for mounting components. You'll screw your PLC, relays, and power distribution onto this rail—just like in real factories. At 2 meters long, you'll have enough to build multiple kits.
+- **DIN Rail (DN-R35S1-2)** - The industrial standard for mounting components. You'll screw your PLC, relays, and power distribution onto this rail-just like in real factories. At 2 meters long, you'll have enough to build multiple kits.
 
 <img src="https://cdn.automationdirect.com/images/products/large/l_dnr35s12.jpg" width="200" alt="DIN Rail" />
 
@@ -81,9 +81,9 @@ Make your kit look professional with a 3D-printed stand, or keep it simple with 
 
 ## Software:
 
-Click PLC Programming Software (Free) — Program your PLC
-Ignition (Free Trial) — Create industrial dashboards and HMIs
-Windows, Ubuntu, and VMware — Run your development environment
+Click PLC Programming Software (Free) - Program your PLC
+Ignition (Free Trial) - Create industrial dashboards and HMIs
+Windows, Ubuntu, and VMware - Run your development environment
 # Ready to Build?
 Now that you know what makes this kit tick, it's time to start wiring! Head over to our guide to [Wiring The PLC](../2-Wiring-The-PLC/README.md) section to follow step-by-step assembly instructions. Whether you're a complete beginner or an experienced technician, you'll be programming real industrial logic in no time.
 

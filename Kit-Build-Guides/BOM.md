@@ -35,7 +35,7 @@ These are the components you will need to assemble the kit.
 Pretty cool desk stand, but it takes much more time than just screwing to a sheet of plywood.
 | **Item**                  | **link**               | **Notes**                                                                                      |
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
-| DIN-Rail Mount Desk Stand | [The RIG (R1.1) — DIY helper stand.](https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | 3D Print this awesome desk stand!                                                 |
+| DIN-Rail Mount Desk Stand | [The RIG (R1.1) - DIY helper stand.](https://www.printables.com/model/837104-the-rig-r11-diy-helper-stand-for-testing-electroni)              | 3D Print this awesome desk stand!                                                 |
 | Button panel | [Download](Button%20Panel.stl)           | 3D Printed panel that holds the buttons.       |
 | **OR** |         | If you dont want to spend time 3D printing...                                         |
 | plywood to mount DIN rail | Scavenge.              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |

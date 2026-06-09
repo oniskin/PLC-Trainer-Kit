@@ -1,5 +1,5 @@
 # =============================================================================
-# Factory Homelab — Docker Compose
+# Factory Homelab - Docker Compose
 # Services: NeuronEX · HiveMQ CE · Ignition · Caddy
 # Network: factory-stack (internal bridge)
 # Secrets: admin passwords read from files, never hardcoded
@@ -22,7 +22,7 @@ volumes:
 networks:
   factory-stack:
     driver: bridge
-    internal: false   # must stay false — Ignition needs internet for licence
+    internal: false   # must stay false - Ignition needs internet for licence
 
 services:
 
@@ -57,7 +57,7 @@ services:
     restart: unless-stopped
     privileged: true
     ports:
-      - "127.0.0.1:8085:8085"   # loopback — Caddy proxies externally
+      - "127.0.0.1:8085:8085"   # loopback - Caddy proxies externally
     volumes:
       - neuronex-data:/opt/neuronex/data
     networks:
@@ -81,7 +81,7 @@ services:
     environment:
       HIVEMQ_LOG_LEVEL: INFO
     ports:
-      - "1883:1883"               # MQTT — LAN-exposed for S7-1200/Neuron
+      - "1883:1883"               # MQTT - LAN-exposed for S7-1200/Neuron
                                         # NOTE: HiveMQ CE has no web UI
                                         # Control Centre is commercial only
     volumes:

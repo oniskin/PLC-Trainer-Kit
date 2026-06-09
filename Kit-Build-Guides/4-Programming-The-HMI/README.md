@@ -52,7 +52,7 @@ Before you start programming, you'll need the Ignition software installed and co
 
 - Ubuntu 24.04 Virtual Machine
 - Ethernet connection from the machine to your PLC and Ignition Gateway
-- Installation file for Ignition by Inductive Automation (Free trial or licensed) — Download from [Inductive Automation](https://inductiveautomation.com/)
+- Installation file for Ignition by Inductive Automation (Free trial or licensed) - Download from [Inductive Automation](https://inductiveautomation.com/)
 - Connection to the Internet to download applications like MySQL
 
 # Guide
