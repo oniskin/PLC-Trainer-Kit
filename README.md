@@ -66,6 +66,8 @@ I’m streaming the build process live — follow along and learn each step in r
 - [Episode 5: Modbus Deep Dive and FIRST ATTACKS!](https://www.youtube.com/live/MQFppslgP8k?si=rsgO88wHy-eugFyR)
 - [Episode 6: Inside a vibe-coded Modbus ATTACK!](https://www.youtube.com/live/e4Nqgnozs3A?si=cGjxM51qwUy2oRQV)
 
+Go to the channel for the full list. There's a LOT.
+
 > Subscribe to [@PacketsOrItDidntHappen on YouTube](https://www.youtube.com/@PacketsOrItDidntHappen) for updates and new episodes.
 
 ---
@@ -74,10 +76,15 @@ I’m streaming the build process live — follow along and learn each step in r
 
 Everything is organized in the `Kit-Build-Guides/` folder. Start with the intro and follow the wiring, programming, and HMI chapters.
 
-- `Kit-Build-Guides/1-Kit-Intro/README.md`
-- `Kit-Build-Guides/2-Wiring-The-PLC/README.md`
-- `Kit-Build-Guides/3-Programming-The-PLC/README.md`
-- `Kit-Build-Guides/4-Programming-The-HMI/README.md`
+- [01 - Kit Intro](Kit-Build-Guides/01-Kit-Intro/README.md)
+- [02 - Wiring The PLC](Kit-Build-Guides/02-Wiring-The-PLC/README.md)
+- [03 - Programming The PLC](Kit-Build-Guides/03-Programming-The-PLC/README.md)
+- [04 - Programming The HMI](Kit-Build-Guides/04-Programming-The-HMI/README.md)
+- [05 - Modbus Deep Dive and First Attack](Kit-Build-Guides/05-Modbus-Deep-Dive-and-first-ATTACK/README.md)
+- [06 - Suricata Network Detection](Kit-Build-Guides/06-Suricata-Network-Detection/README.md)
+- [07 - Zeek Network Detection](Kit-Build-Guides/07-Zeek-Network-Detection/README.md)
+- [08 - Industrial DMZ Part 1](Kit-Build-Guides/08-Industrial-DMZ-Part-1/README.md)
+- [09 - Industrial DMZ Part 2](Kit-Build-Guides/09-Industrial-DMZ-Part-2-SRA/README.md)
 
 ---
 
