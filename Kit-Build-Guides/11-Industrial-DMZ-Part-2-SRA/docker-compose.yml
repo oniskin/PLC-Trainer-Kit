@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # The Guacamole Protocol Proxy (handles RDP/SSH/VNC translations)
+  guacd:
+    image: guacamole/guacd:latest
+    container_name: guacamole_guacd
+    restart: always
+    healthcheck:
+      disable: true
+
+  # The PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: guacamole_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: guacamole_db
+      POSTGRES_USER: guacamole_user
+      POSTGRES_PASSWORD: joshua
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+
+# The Guacamole Frontend Web App
+  guacamole:
+    image: guacamole/guacamole:latest
+    container_name: guacamole_web
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - GUACD_HOSTNAME=guacd
+      - POSTGRESQL_ENABLED=true
+      - POSTGRESQL_HOSTNAME=postgres
+      - POSTGRESQL_DATABASE=guacamole_db
+      - POSTGRESQL_USER=guacamole_user
+      - POSTGRESQL_PASSWORD=joshua
+      - TOTP_ENABLED=true
+    depends_on:
+      - guacd
+      - postgres
+
+volumes:
+  pgdata:
