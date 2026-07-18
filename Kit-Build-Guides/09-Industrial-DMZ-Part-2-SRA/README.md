@@ -199,3 +199,11 @@ Enter your password and Bob's your uncle! You've got remote access!
 <img src="img/guacamole-6.png"></src>
 
 ***How cool is that?!***
+
+# References
+
+1. [Industrial Control System Security, Volume 1](https://www.amazon.com/Industrial-Cybersecurity-Efficiently-critical-infrastructure-ebook/dp/B0761XRTP9?ref_=ast_author_dp&th=1&psc=1), by Pascal Ackerman
+2. [Cisco Converged Plantwide Ethernet - Industrial Demilitarized Zone](https://literature.rockwellautomation.com/idc/groups/literature/documents/td/enet-td009_-en-p.pdf), by Cisco and Rockwell Automation
+3. [Docker](https://docs.docker.com/)
+4. [Apache Guacamole Project](https://guacamole.apache.org)
+5. [TOTP MFA in Guacamole](https://guacamole.apache.org/doc/1.6.0/gug/totp-auth.html)
