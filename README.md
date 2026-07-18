@@ -83,8 +83,8 @@ Everything is organized in the `Kit-Build-Guides/` folder. Start with the intro 
 - [05 - Modbus Deep Dive and First Attack](Kit-Build-Guides/05-Modbus-Deep-Dive-and-first-ATTACK/README.md)
 - [06 - Suricata Network Detection](Kit-Build-Guides/06-Suricata-Network-Detection/README.md)
 - [07 - Zeek Network Detection](Kit-Build-Guides/07-Zeek-Network-Detection/README.md)
-- [08 - Industrial DMZ Part 1](Kit-Build-Guides/08-Industrial-DMZ-Part-1/README.md)
-- [09 - Industrial DMZ Part 2](Kit-Build-Guides/09-Industrial-DMZ-Part-2-SRA/README.md)
+- [08 - Industrial DMZ Part 1 - Firewall + Squid Proxy](Kit-Build-Guides/08-Industrial-DMZ-Part-1/README.md)
+- [09 - Industrial DMZ Part 2 - Remote Access w/ Guacamole](Kit-Build-Guides/09-Industrial-DMZ-Part-2-SRA/README.md)
 
 ---
 
