@@ -14,6 +14,35 @@ A few examples of who would use remote access:
 
 But this brings up so many security concerns. :(devilish grin)
 
+[Watch us build this LIVE ON YOUTUBE - LIVESTREAM](https://youtube.com/live/bMkIu6PMIrY?feature=share)
+
+<img src="img/e11-sra.png" width=400></img>
+
+# What we're building...
+
+This project is split into 2 phases.
+
+1. Installing and Configuring the Guacamole server.
+2. Adding the firewall rules.
+
+In the end, we will have something like the image below.
+
+<img src="img/guacamole2.png"></img>
+
+1. Users on the IT network can access a Guacamole remote access portal.
+2. They authenticate with local Guacamole credentials (we'll add on to this later)
+3. The user enters their MFA token code.
+4. The OT hosts they are allowed to access will populate.
+5. They click on one to initiate a remote access session over RDP/SSH/VNC.
+6. They enter their credentials for the system they are attempting to access.
+7. Voila! Remote Access!
+
+This process is similar to my favorite I-DMZ architectural design reference, the [CPwE](https://literature.rockwellautomation.com/idc/groups/literature/documents/td/enet-td009_-en-p.pdf)!
+
+But more importantly, this process is VERY typical of OT remote access systems found in production.
+
+Now, let's build it.
+
 # Prerequisites
 
 - Ubuntu 24.04 VM
