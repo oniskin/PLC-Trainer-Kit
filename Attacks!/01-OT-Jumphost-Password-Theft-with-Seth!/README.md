@@ -44,7 +44,7 @@ Windows Client (192.168.37.159)
 → OT Jumphost (192.168.0.9)
 ```
 
-<img src="img/seth-2.png"></img>
+<img src="img/seth-lab-diagram.png"></img>
 
 ## Attack diagram
 
@@ -52,7 +52,7 @@ Here is a diagram of how the attack works. (thank you ChatGPT!)
 
 Watch the livestream for a complete explanation. It'll make more sense...
 
-<img src="img/seth-lab-diagram.png"></img>
+<img src="img/seth-3.png"></img>
 
 ## Prerequisites
 
