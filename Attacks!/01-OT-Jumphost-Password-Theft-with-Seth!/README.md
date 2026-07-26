@@ -1,5 +1,11 @@
 # Stealing Plaintext Jumphost Credentials Using Seth
 
+## Watch the attack LIVESTREAM!
+
+Watch the [LIVESTREAM](https://www.youtube.com/live/JVqw_jL7g28) where we attacked the Kit with Seth!
+
+<img src="img/youtube-thumbnail12.png" width=400></img>
+
 ## Why This Matters
 
 Jump hosts are a cornerscommon mode of OT remote access. The idea is that instead of allowing direct RDP connections from engineer laptops directly into OT devices, remote session must pass through a hardened intermediary system, the "jumphost."
@@ -39,6 +45,14 @@ Windows Client (192.168.37.159)
 ```
 
 <img src="img/seth-2.png"></img>
+
+## Attack diagram
+
+Here is a diagram of how the attack works. (thank you ChatGPT!)
+
+Watch the livestream for a complete explanation. It'll make more sense...
+
+<img src="img/seth-3.png"></img>
 
 ## Prerequisites
 
