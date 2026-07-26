@@ -52,7 +52,7 @@ Here is a diagram of how the attack works. (thank you ChatGPT!)
 
 Watch the livestream for a complete explanation. It'll make more sense...
 
-<img src="img/seth-3.png"></img>
+<img src="img/seth-lab-diagram.png"></img>
 
 ## Prerequisites
 
