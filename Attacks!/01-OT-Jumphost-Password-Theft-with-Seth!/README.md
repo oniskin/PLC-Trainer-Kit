@@ -38,7 +38,7 @@ Windows Client (192.168.37.159)
 → OT Jumphost (192.168.0.9)
 ```
 
-<img src="img/seth-2.png"></img>
+<img src="img/seth-lab-diagram.png" width=400></img>
 
 ## Attack diagram
 
