@@ -2,6 +2,10 @@
 
 *Performed in an isolated lab environment for authorized security testing.*
 
+Watch the [LIVESTREAM](https://www.youtube.com/live/JVqw_jL7g28) where we attacked the Kit with Seth!
+
+<img src="img/youtube-thumbnail12.png" width=400></img>
+
 ## Why This Matters
 
 RDP jump hosts are a cornerstone of OT remote access architecture. The idea is sound: no remote laptop ever talks directly to a PLC. All sessions must pass through a hardened intermediary.

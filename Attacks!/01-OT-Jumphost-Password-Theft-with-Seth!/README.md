@@ -16,27 +16,12 @@ Jump hosts are a common mode of OT remote access — instead of allowing direct 
 
 | System             | IP Address       | Purpose                                              |
 | ------------------ | ---------------- | ---------------------------------------------------- |
-| Windows RDP client | `192.168.37.159` | System initiating the RDP connection                 |
-| Kali Linux / Seth  | `192.168.37.134` | Man-in-the-middle and credential interception system |
-| IT Default Gateway | `192.168.37.164` | Second part of the ARP Spoof MITM... (you'll see later)                             |
+| Windows RDP client | `192.168.141.128` | System initiating the RDP connection                 |
+| Kali Linux / Seth  | `192.168.141.137` | Man-in-the-middle and credential interception system |
+| IT Default Gateway | `192.168.141.1` | Second part of the ARP Spoof MITM... (you'll see later)                             |
 | OT Jumphost / Windows RDP server | `192.168.0.9` | Intended RDP destination                             |
 
-The intended RDP path was:
-
-```text
-Windows Client (192.168.37.159) 
-→ OT Firewall (192.168.37.164) 
-→ OT Jumphost (192.168.0.9)
-```
-
-Seth was positioned to intercept this traffic from:
-
-```text
-Windows Client (192.168.37.159) 
-→ Kali / Seth (192.168.37.134) [ARP Spoof Man-in-the-middle]
-→ OT Firewall (192.168.37.164) 
-→ OT Jumphost (192.168.0.9)
-```
+TTLDR Attack: We used ```Seth``` to trick the user into giving us the password to the Jumphost.
 
 <img src="img/seth-lab-diagram.png" width=400></img>
 
@@ -77,19 +62,23 @@ sudo apt install python3-impacket dsniff -y
 
 ### Step 1: Start Seth
 
+The Seth Github states the command is run as follows:
 ```bash
-sudo ./seth.sh eth1 192.168.37.159 192.168.37.134 192.168.37.164
+sudo ./seth.sh <INTERFACE> <ATTACKER IP> <VICTIM IP> <GATEWAY IP|HOST IP> [<COMMAND>]
 ```
 
 | Argument    | Value            | Purpose                                     |
 | ----------- | ---------------- | ------------------------------------------- |
-| Interface   | `eth1`           | Kali interface on the lab network           |
-| RDP client  | `192.168.37.159` | Windows system initiating the connection    |
-| Seth system | `192.168.37.134` | Kali man-in-the-middle address              |
-| Next hop    | `192.168.37.164` | IT-side gateway (OT firewall)               |
+| INTERFACE   | `eth1`           | Kali interface on the lab network           |
+| ATTACKER IP | `192.168.141.137` | Kali man-in-the-middle address              |
+| VICTIM IP    | `192.168.141.1` | IT-side gateway (firewall)               |
 
-> **Why `192.168.37.164` and not `192.168.0.9`?**
-> Seth is a Layer 2 ARP spoof — it only works within a subnet. The actual jumphost is at `192.168.0.9`, but Seth's fourth argument is the **next hop** toward it. All client traffic must cross the OT firewall (`192.168.37.164`) first, so that's what Seth ARP-spoofs.
+```bash
+sudo ./seth.sh eth0 192.168.141.137 192.168.141.128 192.168.141.1
+```
+
+> **Why `192.168.141.1` and not `192.168.0.9`?**
+> Seth is a Layer 2 ARP spoof — it only works within a subnet. The actual jumphost is at `192.168.0.9`, but Seth's fourth argument is the **next hop** toward it. All client traffic must cross the OT firewall (`192.168.141.1`) first, so that's what Seth ARP-spoofs.
 
 Seth will begin listening for a SYN packet.
 
