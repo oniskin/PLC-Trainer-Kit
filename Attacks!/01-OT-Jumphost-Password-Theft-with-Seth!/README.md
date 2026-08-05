@@ -200,7 +200,8 @@ But to be honest, all of these (except ARP spoofing) sound really noisy in a pro
 ## Security Takeaway
 
 1. **Lock down firewall rules.** If Kali can't reach the jumphost's RDP port, the attack fails.
-2. **Don't rely on RDP jumphosts as your primary defense.** Use Remote Desktop Gateways or a purpose-built OT remote access tool instead.
+2. **Don't rely on RDP jumphosts as your primary defense.** Just like you shouldn't expose RDP to the public Internet, don't expose it in OT. Use Remote Desktop Gateways or a purpose-built OT remote access tool instead.
+3. **Enable MFA for all external connections.** Stealing a password should not be enough to give you access into OT. MFA for the WIN!
 
 ## References
 
