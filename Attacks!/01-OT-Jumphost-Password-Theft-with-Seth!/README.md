@@ -27,7 +27,7 @@ TTLDR Attack: We used ```Seth``` to trick the user into giving us the password t
 
 ## Attack diagram
 
-<img src="img/seth-3.png"></img>
+<img src="img/seth-attack-animated.gif"></img>
 
 *(Watch the livestream for a full explanation.)*
 
