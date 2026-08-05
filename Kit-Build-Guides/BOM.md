@@ -10,7 +10,7 @@ These are the components you will need to assemble the kit.
 |---------------------------|------------------------|------------------------------------------------------------------------------------------------|
 | Click PLC Plus CPU        | [C2-01CPU](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpus/c2-01cpu)               | Configure with CPU + IO Card together                                                          |
 | PLC I/O Card              | [C2-08DR-6V](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules/c2-08dr-6v)             | If backorered, get a [C2-08D2-6V](https://www.automationdirect.com/adc/shopping/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules/c2-08d2-6v)                                                                                            |
-| Din rail                  | [DN-R35S1-2](https://www.automationdirect.com/pn/DN-R35S1-2)             | 2 meters of DIN Rail. Enough for multiple kits.                                                |
+| Din rail                  | [DN-R35S1-2](https://www.automationdirect.com/pn/DN-R35S1-2)             | 2 meters of DIN Rail. Enough for multiple plywood kits or 1 RIG below.                                                |
 | red pushbutton + light    | [GCX3201-24](https://www.automationdirect.com/pn/GCX3201-24)             | Any button or 24vdc light will work                                                            |
 | green button + light      | [GCX3202-24](https://www.automationdirect.com/pn/GCX3202-24)             | Any button or 24vdc light will work                                                            |
 | terminal blocks           | [KN-T12GRY-25](https://www.automationdirect.com/pn/KN-T12GRY-25)           | Factory Realistic!                                                                             |
@@ -39,6 +39,16 @@ Pretty cool desk stand, but it takes much more time than just screwing to a shee
 | Button panel | [Download](Button%20Panel.stl)           | 3D Printed panel that holds the buttons.       |
 | **OR** |         | If you dont want to spend time 3D printing...                                         |
 | plywood to mount DIN rail | Scavenge.              | Easy alternative to 3D Printed DIN-Rail Mount.                                                 |
+
+### Emergency Stop Expansion Pack
+For those who enjoyed the wiring part. E-Stop is heavy wiring, little programming. You don't want to trust a computer with an emergency. 😅
+> [!Caution]
+> These are for learning only. A real production emergency stop design is very expensive, because lives are on the line.
+
+| **Item**                  | **link**               | **Notes**                                                                                      |
+|---------------------------|------------------------|------------------------------------------------------------------------------------------------|
+| Emergency Stop Button | [GCX3131](https://www.automationdirect.com/adc/shopping/catalog/pushbuttons_-z-_switches_-z-_indicators/emergency_stop_pushbuttons/gcx3131)              | Affordable mushroom pushbutton!                                                 |
+| Reset Light/Button | [GCX3204-24](https://www.automationdirect.com/adc/shopping/catalog/pushbuttons_-z-_switches_-z-_indicators/pushbuttons/gcx3204-24)           | Reset Pushbutton and E-Stop block active light.       |
 
 ## Tools Required
 | **Item**                  | **link**               | **Notes**                                                                                      |
