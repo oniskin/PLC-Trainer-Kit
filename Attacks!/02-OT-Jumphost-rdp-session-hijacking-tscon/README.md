@@ -92,12 +92,14 @@ A local administrator account is not enough. `tscon` requires `NT AUTHORITY\SYST
 From an elevated Command Prompt on the jump host:
 
 ```cmd
-PsExec.exe -s cmd.exe
+PsExec64.exe -s cmd.exe
 ```
 
 PsExec launches a new Command Prompt running under the SYSTEM account.
 
 > **Why SYSTEM?** `tscon` enforces session ownership for normal accounts — a standard administrator can only reconnect their own session. SYSTEM sits above that enforcement boundary. PsExec with the `-s` flag delegates execution to the SYSTEM account, which bypasses the ownership check.
+
+> **Caution**: For some reason, `psexec.exe` did not work for me. It took a good while on the Livestream to figure out the issue. Switching to `psexec64.exe` did the trick.
 
 ### Step 3: Verify SYSTEM-Level Access
 
@@ -129,25 +131,22 @@ For example, if the victim's session ID is `2` and your current session name is 
 tscon 2 /dest:rdp-tcp#3
 ```
 
+I just did:
+```cmd
+tscon 2
+```
+
+And the user's session loaded right up!
+
 Your RDP window will immediately switch to the victim's desktop. No password prompt appears. No warning is presented to the user.
 
-> TODO: Add a screenshot showing the tscon command running in the SYSTEM shell.
-
-<!-- Proposed image path: img/tscon-system-shell.png -->
-
-> TODO: Add a screenshot showing the attacker's RDP window switching to the victim's desktop.
-
-<!-- Proposed image path: img/session-switched-desktop.png -->
+<img src="img/rdp-tscon-1.png"></img>
 
 ### Step 5: Inspect the Inherited Desktop
 
 Once inside the victim's desktop, look for any open RDP connections to OT hosts. These connections may appear as full-screen RDP windows, minimized taskbar entries, or active Remote Desktop Connection sessions.
 
 If the victim's nested RDP session to the OT jump host or OT workstation is still open, you now have interactive control over it. You did not authenticate to that OT host. You did not need the victim's OT credentials. You walked into a room the victim left unlocked — with the door to the OT network still open behind them.
-
-> TODO: Add a screenshot showing an open OT RDP session visible on the inherited desktop.
-
-<!-- Proposed image path: img/nested-ot-rdp-inherited.png -->
 
 ## Why tscon Works Without a Password
 
