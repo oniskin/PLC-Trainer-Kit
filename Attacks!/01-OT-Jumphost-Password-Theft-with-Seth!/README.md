@@ -14,16 +14,24 @@ Jump hosts are a common mode of OT remote access — instead of allowing direct 
 
 ## Lab Architecture
 
+In this attack, we're going to use the following assets. The rest can be left powered off.
+
 | System             | IP Address       | Purpose                                              |
 | ------------------ | ---------------- | ---------------------------------------------------- |
 | Windows RDP client | `192.168.141.128` | System initiating the RDP connection                 |
 | Kali Linux / Seth  | `192.168.141.137` | Man-in-the-middle and credential interception system |
-| IT Default Gateway | `192.168.141.1` | Second part of the ARP Spoof MITM... (you'll see later)                             |
-| OT Jumphost / Windows RDP server | `192.168.0.9` | Intended RDP destination                             |
+| IT Default Gateway | `192.168.141.1` | Second part of the ARP Spoof MITM... (you'll see later)|
+| OT Jumphost / Windows RDP server | `192.168.0.9` | Intended RDP destination                   |
 
-TTLDR Attack: We used ```Seth``` to trick the user into giving us the password to the Jumphost.
+<img src="img/rdp-diagram.png" width=400></img>
 
-<img src="img/seth-lab-diagram.png" width=400></img>
+TLDR Attack: We used `Seth` to trick the user into giving us the password to the Jumphost.
+
+1. **Arp Spoof** - `Seth` attack begins ARP Spoofing between IT Workstation and Gateway.
+2. **RDP Proxy** - `Seth` relays RDP connection to the RDP server, but this generates a certificate warning on the IT workstation (RDP Client), clicking Yes.
+3. **Fails** - `Seth` tries to do an RDP man-in-the-middle, but it fails because the server has Network Level Authentication turned on.
+4. **Credentials** - No matter! `Seth` pretends like it is the RDP server and has NLA disabled. RDP Client prompted for username / password.
+5. **Plaintext Password!** - `Seth` intercepts the plaintext username and password and Voila! You're cooked.
 
 ## Attack Animation (gif)
 
@@ -186,6 +194,18 @@ Seth did not send an unsolicited credential prompt to the Windows client from ou
 This is an important distinction when assessing risk.
 An attacker who has no foothold on the local network segment cannot execute this attack without first establishing that position.
 
+## Note on Network Level Authentication
+
+AI tools recommend `Network Level Authentication` (`NLA`) to mitigate this threat. **But in our demo, NLA WAS Enabled!**
+
+How did it still work?
+
+Because `Seth` was impersonating (ARP Spoofing) the RDP server, and told the client that NLA was disabled, and the client gladly downgraded.
+
+Most security teams focus on hardening the server, but in this case it was a client weakness that allowed the compromise.
+
+**SNEAKY!**
+
 ## Detection Opportunities
 
 - Unexpected ARP table changes or duplicate-IP behavior
@@ -202,6 +222,7 @@ But to be honest, all of these (except ARP spoofing) sound really noisy in a pro
 1. **Lock down firewall rules.** If Kali can't reach the jumphost's RDP port, the attack fails.
 2. **Don't rely on RDP jumphosts as your primary defense.** Just like you shouldn't expose RDP to the public Internet, don't expose it in OT. Use Remote Desktop Gateways or a purpose-built OT remote access tool instead.
 3. **Enable MFA for all external connections.** Stealing a password should not be enough to give you access into OT. MFA for the WIN!
+4. **User Training to not click past warnings.** Remove the cause of security warnings and train users to take them seriously.
 
 ## References
 
