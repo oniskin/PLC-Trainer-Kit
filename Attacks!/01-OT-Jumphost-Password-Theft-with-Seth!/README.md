@@ -14,35 +14,28 @@ Jump hosts are a common mode of OT remote access — instead of allowing direct 
 
 ## Lab Architecture
 
+In this attack, we're going to use the following assets. The rest can be left powered off.
+
 | System             | IP Address       | Purpose                                              |
 | ------------------ | ---------------- | ---------------------------------------------------- |
-| Windows RDP client | `192.168.37.159` | System initiating the RDP connection                 |
-| Kali Linux / Seth  | `192.168.37.134` | Man-in-the-middle and credential interception system |
-| IT Default Gateway | `192.168.37.164` | Second part of the ARP Spoof MITM... (you'll see later)                             |
-| OT Jumphost / Windows RDP server | `192.168.0.9` | Intended RDP destination                             |
+| Windows RDP client | `192.168.141.128` | System initiating the RDP connection                 |
+| Kali Linux / Seth  | `192.168.141.137` | Man-in-the-middle and credential interception system |
+| IT Default Gateway | `192.168.141.1` | Second part of the ARP Spoof MITM... (you'll see later)|
+| OT Jumphost / Windows RDP server | `192.168.0.9` | Intended RDP destination                   |
 
-The intended RDP path was:
+<img src="img/rdp-diagram.png" width=400></img>
 
-```text
-Windows Client (192.168.37.159) 
-→ OT Firewall (192.168.37.164) 
-→ OT Jumphost (192.168.0.9)
-```
+TLDR Attack: We used `Seth` to trick the user into giving us the password to the Jumphost.
 
-Seth was positioned to intercept this traffic from:
+1. **Arp Spoof** - `Seth` attack begins ARP Spoofing between IT Workstation and Gateway.
+2. **RDP Proxy** - `Seth` relays RDP connection to the RDP server, but this generates a certificate warning on the IT workstation (RDP Client), clicking Yes.
+3. **Fails** - `Seth` tries to do an RDP man-in-the-middle, but it fails because the server has Network Level Authentication turned on.
+4. **Credentials** - No matter! `Seth` pretends like it is the RDP server and has NLA disabled. RDP Client prompted for username / password.
+5. **Plaintext Password!** - `Seth` intercepts the plaintext username and password and Voila! You're cooked.
 
-```text
-Windows Client (192.168.37.159) 
-→ Kali / Seth (192.168.37.134) [ARP Spoof Man-in-the-middle]
-→ OT Firewall (192.168.37.164) 
-→ OT Jumphost (192.168.0.9)
-```
+## Attack Animation (gif)
 
-<img src="img/seth-lab-diagram.png" width=400></img>
-
-## Attack diagram
-
-<img src="img/seth-3.png"></img>
+<img src="img/seth-attack-animated.gif"></img>
 
 *(Watch the livestream for a full explanation.)*
 
@@ -77,19 +70,23 @@ sudo apt install python3-impacket dsniff -y
 
 ### Step 1: Start Seth
 
+The Seth Github states the command is run as follows:
 ```bash
-sudo ./seth.sh eth1 192.168.37.159 192.168.37.134 192.168.37.164
+sudo ./seth.sh <INTERFACE> <ATTACKER IP> <VICTIM IP> <GATEWAY IP|HOST IP> [<COMMAND>]
 ```
 
 | Argument    | Value            | Purpose                                     |
 | ----------- | ---------------- | ------------------------------------------- |
-| Interface   | `eth1`           | Kali interface on the lab network           |
-| RDP client  | `192.168.37.159` | Windows system initiating the connection    |
-| Seth system | `192.168.37.134` | Kali man-in-the-middle address              |
-| Next hop    | `192.168.37.164` | IT-side gateway (OT firewall)               |
+| INTERFACE   | `eth1`           | Kali interface on the lab network           |
+| ATTACKER IP | `192.168.141.137` | Kali man-in-the-middle address              |
+| VICTIM IP    | `192.168.141.1` | IT-side gateway (firewall)               |
 
-> **Why `192.168.37.164` and not `192.168.0.9`?**
-> Seth is a Layer 2 ARP spoof — it only works within a subnet. The actual jumphost is at `192.168.0.9`, but Seth's fourth argument is the **next hop** toward it. All client traffic must cross the OT firewall (`192.168.37.164`) first, so that's what Seth ARP-spoofs.
+```bash
+sudo ./seth.sh eth0 192.168.141.137 192.168.141.128 192.168.141.1
+```
+
+> **Why `192.168.141.1` and not `192.168.0.9`?**
+> Seth is a Layer 2 ARP spoof — it only works within a subnet. The actual jumphost is at `192.168.0.9`, but Seth's fourth argument is the **next hop** toward it. All client traffic must cross the OT firewall (`192.168.141.1`) first, so that's what Seth ARP-spoofs.
 
 Seth will begin listening for a SYN packet.
 
@@ -197,6 +194,18 @@ Seth did not send an unsolicited credential prompt to the Windows client from ou
 This is an important distinction when assessing risk.
 An attacker who has no foothold on the local network segment cannot execute this attack without first establishing that position.
 
+## Note on Network Level Authentication
+
+AI tools recommend `Network Level Authentication` (`NLA`) to mitigate this threat. **But in our demo, NLA WAS Enabled!**
+
+How did it still work?
+
+Because `Seth` was impersonating (ARP Spoofing) the RDP server, and told the client that NLA was disabled, and the client gladly downgraded.
+
+Most security teams focus on hardening the server, but in this case it was a client weakness that allowed the compromise.
+
+**SNEAKY!**
+
 ## Detection Opportunities
 
 - Unexpected ARP table changes or duplicate-IP behavior
@@ -211,7 +220,9 @@ But to be honest, all of these (except ARP spoofing) sound really noisy in a pro
 ## Security Takeaway
 
 1. **Lock down firewall rules.** If Kali can't reach the jumphost's RDP port, the attack fails.
-2. **Don't rely on RDP jumphosts as your primary defense.** Use Remote Desktop Gateways or a purpose-built OT remote access tool instead.
+2. **Don't rely on RDP jumphosts as your primary defense.** Just like you shouldn't expose RDP to the public Internet, don't expose it in OT. Use Remote Desktop Gateways or a purpose-built OT remote access tool instead.
+3. **Enable MFA for all external connections.** Stealing a password should not be enough to give you access into OT. MFA for the WIN!
+4. **User Training to not click past warnings.** Remove the cause of security warnings and train users to take them seriously.
 
 ## References
 
