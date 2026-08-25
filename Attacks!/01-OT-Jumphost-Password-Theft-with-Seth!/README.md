@@ -39,15 +39,13 @@ TLDR Attack: We used `Seth` to trick the user into giving us the password to the
 
 *(Watch the livestream for a full explanation.)*
 
-## Prerequisites
+## Prerequisites (conference demo users can skip this!)
 
 - RDP client and Kali on the **same subnet**
 - Both must be able to reach the OT jumphost's RDP port
 - A jumphost in the OT network with Remote Desktop enabled
 
-## Running the Attack
-
-### Step 0: Install Seth
+#### Step 0: Install Seth
 
 Seth is not included in Kali by default. Clone it from GitHub and make the script executable.
 
@@ -67,6 +65,8 @@ You should see the Seth usage/help output. If you see a missing-dependency error
 ```bash
 sudo apt install python3-impacket dsniff -y
 ```
+
+## Running the Attack
 
 ### Step 1: Start Seth
 
@@ -108,7 +108,7 @@ Seth will begin listening for a SYN packet.
 ```
 ### Step 2: Initiate RDP from the Windows Client
 
-Open an RDP connection to `192.168.0.9` as normal. Seth intercepts it mid-handshake and the client gets this warning.
+***On the IT workstation VM***, Open an RDP connection to `192.168.0.9` as normal. Seth intercepts it mid-handshake and the client gets this warning.
 
 We've all trained ourselves to just click `Yes`. Admit it.
 
