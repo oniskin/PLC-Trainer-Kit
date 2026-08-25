@@ -209,6 +209,7 @@ Most security teams focus on hardening the server, but in this case it was a cli
 > [!NOTE]
 > **Windows 11 Update** -- 😢 Seth doesn't work anymore! When you try the Seth Man-in-the-middle attack, you get an error message that says your certificate is wrong.
 > To make the attack work again, you need to **disable Network Level Authentication (NLA) on the server**. This has to do with Channel Binding enforcement in modern versions of Windows.
+<img src="img/seth-certifiate-error.png"></img>
 
 ## Detection Opportunities
 
