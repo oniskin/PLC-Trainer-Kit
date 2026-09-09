@@ -17,7 +17,7 @@ Sound like fun?
 ### Install Zeek.
 
 First, you'll need an Ubuntu virtual machine.
-I'm using the same virtual machine from the [Suricata install](../7-Suricata-Network-Detection/README.md) we just did.
+I'm using the same virtual machine from the [Suricata install](../06-Suricata-Network-Detection/README.md) we just did.
 
 Next, install Zeek  following the Documentation [Installing Zeek](https://docs.zeek.org/en/lts/install.html).
 
@@ -68,7 +68,7 @@ You should see a bunch of logs. Follow the quick start guide.
 
 # Configure Zeek to listen to LIVE network traffic
 
-Like in the [Suricata install](../7-Suricata-Network-Detection/README.md), we will configure Zeek to listen to the proper interface.
+Like in the [Suricata install](../06-Suricata-Network-Detection/README.md), we will configure Zeek to listen to the proper interface.
 
 ```
 analyst@nsm:~$ ip a
@@ -351,7 +351,7 @@ analyst@nsm:~/zeek$ sudo tail -F /opt/zeek/logs/current/notice.log
 
 `tail -F` will monitor a file, showing changes as they happen. So, you'll see new alerts as they come in.
 
-3. Startup your Kali attack box (the one we used in our [Modbus Attack](../5-Modbus-Deep-Dive-and-first-ATTACK/README.md).
+3. Startup your Kali attack box (the one we used in our [Modbus Attack](../05-Modbus-Deep-Dive-and-first-ATTACK/README.md).
 4. Initiate an ARP Spoof Man-In-The-Middle attack.
 
 ```
